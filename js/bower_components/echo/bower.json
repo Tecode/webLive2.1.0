@@ -1,0 +1,25 @@
+{
+  "name": "echo",
+  "main": "echo.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gvn/echo",
+  "authors": [
+    "Gvn Lazar Suntop <gavin@gsuntop.com>"
+  ],
+  "description": "A configurable console wrapper.",
+  "keywords": [
+    "echo",
+    "console",
+    "debugging",
+    "logging",
+    "analytics"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

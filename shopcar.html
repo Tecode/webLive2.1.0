@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机直播商城</title>
+    <link rel="stylesheet" href="js/bower_components/sui_mobile/dist/css/sm.min.css">
+    <link rel="stylesheet" href="js/bower_components/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shopcar.css">
+</head>
+<body>
+<div class="page-group shopcar">
+    <!--//购物车-->
+    <div class="page page-current" id="shoppingCar">
+        <div class="content infinite-scroll-bottom" style="height: 100%" data-distance="100">
+            <div class="list-block" style="margin-top: 0">
+                <ul class="list-container">
+                    <!--删除-->
+                    <!--<li class="shopcar_list">-->
+                        <!--<i class="icon icon_choice in_left"></i>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-33">-->
+                                <!--<img src="img/push_image.jpg" width="100%">-->
+                            <!--</div>-->
+                            <!--<div class="col-66">-->
+                                <!--<div class="discrip">-->
+                                    <!--少女系列毛衣特卖地方都会员回复热狗热少女系列毛衣特卖地方少女系列毛衣特卖地方-->
+                                <!--</div>-->
+                                <!--<div class="monney">-->
+                                    <!--<span>银色</span>-->
+                                    <!--<span class="pull-right">￥360.00</span>-->
+                                <!--</div>-->
+                                <!--<div class="operate clearfix">-->
+                                    <!--<div class="pull-left clearfix">-->
+                                        <!--<i class="calculate pull-left icon icon_add"></i>-->
+                                        <!--<input class="pull-left text-center" type="number" placeholder="" />-->
+                                        <!--<i class="calculate pull-left icon icon_reduce"></i>-->
+                                    <!--</div>-->
+                                    <!--<div class="icon pull-right icon_delet"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="shopcar_list">-->
+                        <!--<i class="icon icon_nochoice in_left"></i>-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-33">-->
+                                <!--<img src="img/push_image.jpg" width="100%">-->
+                            <!--</div>-->
+                            <!--<div class="col-66">-->
+                                <!--<div class="discrip">-->
+                                    <!--少女系列毛衣特卖地方都会员回复热狗热少女系列毛衣特卖地方少女系列毛衣特卖地方-->
+                                <!--</div>-->
+                                <!--<div class="monney">-->
+                                    <!--<span>银色</span>-->
+                                    <!--<span class="pull-right">-->
+                                    <!--￥360.00</span>-->
+                                <!--</div>-->
+                                <!--<div class="operate clearfix">-->
+                                    <!--<div class="pull-left clearfix">-->
+                                        <!--<i class="calculate pull-left icon icon_add"></i>-->
+                                        <!--<input class="pull-left text-center" type="number" placeholder="" />-->
+                                        <!--<i class="calculate pull-left icon icon_reduce"></i>-->
+                                    <!--</div>-->
+                                    <!--<div class="icon pull-right icon_delet"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--删除-->
+                </ul>
+            </div>
+    </div>
+        <div class="nav_footer row">
+            <div class="col-33 choice_btn">
+                <a href="javascript:;" class="clearfix">
+                    <i class="icon icon_nochoice pull-left"></i>
+                    <div class="pull-left">全选</div>
+                </a>
+            </div>
+            <div class="col-33 text-right total_tips">
+                <p class="total">总计:￥<span class="sumTotal">0.00</span></p>
+                <p class="nofree">不含运费</p>
+            </div>
+            <div class="col-33">
+                <a href="javascript:;" class="btn-red text-center topay">去结算(<span class="sumCount">0</span>件)</a>
+            </div>
+        </div>
+
+</div>
+    <!--//付款页面-->
+    <div class="page payment" id='payment'>
+            <div class="address haveaddress" style="display: none">
+                <i class="icon icon_location"></i>
+                <i class="icon icon_edit"></i>
+                <div class="box">
+                    <h3>收货人：<span class="shouhuo">小明</span>   <span class="dianhua">1306526541</span></h3>
+                    <p class="dizhi">重庆市两江新区金开大道西段106号互联网产业园11栋腾讯众创空间</p>
+                </div>
+            </div>
+        <div class="noaddress address" style="display: none">
+            <a href="#addaddress" class="box">
+                <h3>添加收货人信息</h3>
+                <i class="icon icon_dulble"></i>
+            </a>
+        </div>
+        <section>
+                <h3 class="tittle">商品信息</h3>
+            <ul class="payment_list">
+                <!--<li>-->
+                    <!--<a style="display: block" class="row">-->
+                        <!--<div class="col-33">-->
+                           <!--<img src="img/push_image.jpg" width="100%">-->
+                        <!--</div>-->
+                        <!--<div class="col-66">-->
+                            <!--<div class="discription">-->
+                                <!--betu百图时尚荷叶袖绣花衬衫女气质OL五分袖衬衣浅蓝B3M-->
+                            <!--</div>-->
+                            <!--<div class="info clearfix">-->
+                                <!--<span>蓝色尺码M</span>-->
+                                <!--<span class="pull-right">￥159 X1</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            </ul>
+        </section>
+        <section class="value">
+            <h3 class="tittle">
+                <span>商品信息</span>
+                <span class="pull-right">2件</span>
+            </h3>
+            <h3 class="tittle">
+                <span>运费</span>
+                <span class="pull-right">免运费</span>
+            </h3>
+            <h3 class="tittle">
+                <span>活动优惠</span>
+                <span class="pull-right">-10</span>
+            </h3>
+        </section>
+        <div class="nav_footer row">
+            <div class="col-66 choice_btn">
+                <a href="javascript:;" class="clearfix">
+                    <div class="pull-left" style="color: #ff4242">实付款：￥369.50</div>
+                </a>
+            </div>
+            <div class="col-33">
+                <a href="javascript:;" class="btn-red text-center">去付款</a>
+            </div>
+        </div>
+    </div>
+    <!--//填写地址-->
+    <div class="page addaddress" id="addaddress">
+        <div class="content">
+            <form class="addressForm">
+            <ul class="list">
+                <li class="row">
+                    <div class="col-33">
+                        <label for="person">收货人</label>
+                    </div>
+                    <div class="col-66">
+                        <input type="text" id="person" placeholder="收货人的姓名" name="name">
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="col-33">
+                        <label for="phone">手机号码</label>
+                    </div>
+                    <div class="col-66">
+                        <input type="text" id="phone" name="phone" placeholder="11位手机号码">
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="col-33">
+                        <label for="city-picker">选择地区</label>
+                    </div>
+                    <div class="col-66">
+                        <input type="text" id="city-picker" name="area" placeholder="所在地区" readonly="readonly">
+                    </div>
+                </li>
+                <li class="row">
+                    <div class="col-33">
+                        <label for="addresss">详细地址</label>
+                    </div>
+                    <div class="col-66">
+                        <input type="text" id="addresss" name="address" placeholder="街道、楼牌号等">
+                    </div>
+                </li>
+            </ul>
+            <div class="errortips text-center" style="display: none">账号错误！</div>
+            </form>
+            <button type="button">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/webLive.im.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+<script src="js/bower_components/echo/echo.js"></script>
+<script src="js/bower_components/zepto/zepto.touch.js"></script>
+<script>
+    var getShopCarListUrl='json/shoppingCarList.json';//获取购物车商品
+    var cloudMail = {
+        //事件、方法
+        shoppingCar:function () {
+            var maxCount = 0;
+            var clickBox = $(".shopcar .list-container");
+            //计算总数
+            var toltal = function () {
+                var sumCount = 0;
+                var sumMoney = 0;
+                $('.shopcar .list-container .icon_nochoice').each(function (index, child) {
+                    if ($(child).hasClass('icon_choice')) {
+                        sumMoney += parseFloat($(child).parents('.shopcar_list').find('.price').text()) * parseFloat($(child).parents('.shopcar_list').find('input').val());
+                        sumCount += parseInt($(child).parents('.shopcar_list').find('input').val());
+                    }
+                });
+                $('.sumTotal').text(sumMoney.toFixed(2));
+                $('.sumCount').text(sumCount);
+            };
+            //选择或者取消商品
+            clickBox.on('touchend', '.shopcar .list-container .icon_nochoice', function () {
+                $(this).toggleClass('icon_choice');
+                if($('.list-block .icon_nochoice').length == $('.list-block .icon_choice').length){
+                    $('.nav_footer i').addClass('icon_choice');
+                }else {
+                    $('.nav_footer i').removeClass('icon_choice');
+                }
+                toltal();
+            });
+            //点击删除
+            clickBox.on('touchend', '.shopcar .list-container .icon_delet', function () {
+                var self = this;
+                $.confirm('确定要删除吗?', function () {
+                    var data = JSON.parse($(self).siblings('.clearfix').find('input').attr('data-value'));
+                    cloudMail.deleteShopCarList({cid: data.cid, gid: data.gid}, $(self).parents('.shopcar_list'), toltal)
+                });
+            });
+            //减少商品
+            clickBox.on('touchend', '.shopcar .list-container .icon_reduce', function () {
+                var attrData = JSON.parse($(this).siblings('input').attr('data-value'));
+                var value = $(this).siblings('input').val();
+                value--;
+                // cloudMail.postCarNumber({cid:attrData.cid,gid:attrData.gid,value:value});
+                value < 1 ? (function () {
+                    $.toast("商品数量不能小于1！");
+                })() : '';
+                value = value < 1 ? 1 : value;
+                $(this).siblings('input').val(value);
+                //计算数量
+                toltal();
+                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+
+            });
+            //键盘输入
+            clickBox.on('blur', '.shopcar .list-container input', function () {
+                var attrData = JSON.parse($(this).attr('data-value'));
+                maxCount = attrData.gstock;
+                if ($(this).val() < 1) {
+                    $(this).val(1);
+                    $.toast("商品数量不能小于1！");
+                } else if ($(this).val() > maxCount) {
+                    $(this).val(maxCount);
+                    $.toast("不能大于商品的库存量！");
+                }
+
+                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+            });
+            //增加商品
+            clickBox.on('touchend', '.shopcar .list-container .icon_add', function () {
+                var attrData = JSON.parse($(this).siblings('input').attr('data-value'));
+                maxCount = attrData.gstock;
+                var value = $(this).siblings('input').val();
+                value++;
+                // cloudMail.postCarNumber({cid:attrData.cid,gid:attrData.gid,value:value});
+                value > maxCount ? (function () {
+                    $.toast("不能大于商品的库存量！");
+                })() : '';
+                value = value > maxCount ? maxCount : value;
+                $(this).siblings('input').val(value);
+                toltal();
+                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+            });
+            //全部选择
+            $('.nav_footer .choice_btn .icon_nochoice').on('touchend', function () {
+                var sumCount = 0;
+                var sumMoney = 0;
+                $(this).toggleClass('icon_choice');
+                if ($(this).hasClass('icon_choice')) {
+                    $('.shopcar .list-container .icon_nochoice').each(function (index, child) {
+                        $(child).addClass('icon_choice');
+                        sumMoney += parseFloat($(child).parents('.shopcar_list').find('.price').text()) * parseFloat($(child).parents('.shopcar_list').find('input').val());
+                        sumCount += parseInt($(child).parents('.shopcar_list').find('input').val());
+                    });
+                    $('.sumTotal').text(sumMoney.toFixed(2));
+                    $('.sumCount').text(sumCount);
+                } else {
+                    $('.shopcar .list-container .icon_nochoice').each(function (index, child) {
+                        $(child).removeClass('icon_choice');
+                        $('.sumTotal').text(0);
+                        $('.sumCount').text(0);
+                    });
+                }
+            });
+            //去结算
+            $('.nav_footer .topay').on('touchend', function () {
+                var pd = [];
+                if (clickBox.find('.icon_nochoice').hasClass('icon_choice')) {
+                    clickBox.find('.icon_choice').each(function (index, child) {
+                        var data = JSON.parse($(child).parents('.shopcar_list').find('input').attr('data-value'));
+                        pd.push({
+                            cid: data.cid,
+                            gid: data.gid,
+                            count: $(child).parents('.shopcar_list').find('input').val()
+                        });
+                    });
+                    cloudMail.toPay(JSON.stringify(pd));
+                } else {
+                    $.toast("请选择商品！")
+                }
+            });
+        },
+        //请求
+        //获取购物车列表
+        getShopCarList:function (pData) {
+            window.liveim.initAjax(getShopCarListUrl, 'get', pData, function (result) {
+            if (result.code == 0 && result) {
+                // 生成新条目的HTML
+                var html = '';
+                var listData = result.cart_list;
+                for (var i = 0; i < listData.length; i++) {
+                    html += '<li class="shopcar_list"><i class="icon icon_nochoice in_left"></i><div class="row"><div class="col-33">' +
+                        '<img src="img/loading.gif" width="100%"></div><div class="col-66"><div class="discrip">' + listData[i].gname +
+                        '</div><div class="monney"><span style="font-size: .7rem;padding: .1rem .4rem;background-color: #fafafa;border-radius: 999px">' + listData[i].goodsattrval + '</span><span class="pull-right">￥<span class="price">' + listData[i].gprice + '</span></span></div><div class="operate clearfix">' +
+                        '<div class="pull-left clearfix"><i class="calculate pull-left icon icon_reduce"></i><input class="pull-left text-center" value="1" type="number" data-value=' + JSON.stringify(listData[i]) + ' placeholder="" />' +
+                        '<i class="calculate pull-left icon icon_add"></i></div><div class="icon pull-right icon_delet"></div></div></div></div></li>';
+                }
+                $('#shoppingCar').find('.list-container').html(html);
+            }
+        })
+    }
+    };
+
+    $(function () {
+        cloudMail.getShopCarList();
+        cloudMail.shoppingCar();
+    })
+</script>
+</html>

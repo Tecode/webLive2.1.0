@@ -1,0 +1,260 @@
+img{
+    display: block;
+}
+.discription .price li{
+    float: left;
+    padding: 0;
+    padding-right: .4rem;
+}
+.discription .iconfont{
+    float: right!important;
+    margin-top: .2rem;
+    color: #4c4c4c;
+}
+.discription .pagelist {
+    background-color: #fff;
+}
+.discription .pagelist>li{
+    border-bottom: 1px solid #f6f6f6;
+    margin-top: 0!important;
+}
+.discription .img{
+    position: relative;
+    overflow: hidden;
+}
+.discription .tips{
+    width: 4rem;
+    height: 4rem;
+    background-color: rgba(255,255,255,.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 4.6em;
+}
+/*商品详情页*/
+.discription .goods .text{
+    padding-top: .2rem;
+    background-color: #fff;
+    padding-bottom: .1rem;
+}
+.discription .goods .text dd{
+    font-size: .7rem;
+}
+.discription .goods .big{
+    font-size: 1.6rem;
+    font-weight: inherit;
+}
+.discription .goods .del{
+    padding-left: .6rem;
+    color: #999;
+}
+.discription .canchange nav{
+    font-size: .9rem;
+}
+.discription .canchange{
+    background-color: #fff;
+    padding-top: .2rem;
+    padding-bottom: .8rem;
+}
+.discription .changesize,.changecolor{
+    margin-top: .4rem;
+}
+.discription .changesize li{
+    margin-left: .5rem;
+    float: left;
+    padding: .1rem .4rem .1rem .4rem;
+    border: solid 1px #e5e5e5;
+    margin-top: .5rem;
+    font-size: .7rem;
+}
+.discription .changecolor li{
+    margin-left: .5rem;
+    float: left;
+    padding: .1rem .4rem .1rem .4rem;
+    border: solid 1px #e5e5e5;
+    margin-top: .5rem;
+    font-size: .7rem;
+}
+.discription .null{
+    border: dotted 1px #e5e5e5!important;
+    color: #bcbcbc;
+}
+.discription .selected{
+    border: solid 1px #e86059!important;
+}
+.discription .goods .evaluate{
+    background-color: #fff;
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+}
+.discription .more{
+    margin-top: .6rem;
+    padding-bottom: .8rem;
+}
+.discription .chose-box{
+    background-color: #fff;
+    padding-top: .5rem;
+    margin-bottom: 4rem;
+}
+.discription .chose-box .col-50{
+    padding-bottom: .5rem;
+}
+.discription .discriptioninfo{
+    height: 3rem;
+}
+.discription .discriptioninfo span{
+    color: #909090;
+    line-height: 2.5rem;
+    padding: .4rem 3.6rem;
+    background-color: #f5f5f5;
+    border-radius: .4rem;
+}
+.text-left{
+    text-align: left;
+}
+.goods .box-text span{
+    margin-left: 3.5rem;
+}
+.goods .item{
+    border-top: 1px solid #f6f6f6;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}
+.goods .swiper-container .swiper-pagination{
+    background-color: rgba(0,0,0,0);
+}
+/*底部购物车*/
+.discription .nav_footer {
+    position: fixed;
+    bottom: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 2.6rem;
+    background-color: #494949;
+    margin: 0;
+}
+.discription .nav_footer .choice_btn div{
+    color: #505050;
+}
+.discription .nav_footer .total_tips{
+    padding-top: .4rem;
+}
+.discription .nav_footer .total_tips p{
+    font-size: .70rem;
+    margin: 0;
+}
+.discription .nav_footer .total_tips p span{
+    color: #ff4242;
+}
+.discription .nav_footer .choice_btn i{
+    margin-right: .1rem;
+}
+.discription .nav_footer .choice_btn a{
+    width: 50%;
+    float: left;
+}
+.discription .nav_footer .btn-red{
+    display: block;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    background-color:#ff4242;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.discription .nav_footer .btn-yellow{
+    display: block;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    background-color:#ffba00;
+    color: #fff;
+    font-size: .9rem;
+}
+.discription .icon_shopcarnobg{
+    background: url("../img/shopcar_nobg.png")0 0 no-repeat;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+.discription .nav_footer .nobg{
+    margin-top: .5rem;
+    position: relative;
+}
+.discription .nav_footer .car_count{
+    position: absolute;
+    top:-.4rem;
+    right: -.5rem;
+    background-color: #ff5757;
+    color: #fff;
+    font-weight: lighter;
+    padding: .1rem .2rem;
+    font-size: .7rem;
+    border-radius: 999px;
+}
+.discription .submitbuttom{
+    display: block;
+    width: 96%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    color: #fff;
+    background-color: #ff5757;
+}
+.discription .back{
+    display: block;
+    width: 96%;
+    margin: 0 auto;
+    margin-top: .5rem;
+    border: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    color: #fff;
+    background-color: #c6c6c6;
+}
+/*商品属性*/
+.discription .type{
+    padding: 0 .5rem 2rem .5rem;
+}
+.type .heard_tips{
+    color: #505050;
+    margin: .4rem 0 .8rem 0;
+}
+.type .value span{
+    display: inline-block;
+    padding: .2rem .4rem;
+    margin: .3rem .2rem;
+    background-color: #f8f8f8;
+    border-radius: .3rem;
+    color: #505050;
+}
+.discription .nav_footer .choice_btn{
+    padding-top: 0;
+}
+.discription .icon{
+    overflow: visible;
+}
+.discription .valueactive{
+    background-color: #ff6565 !important;
+    color: #fff !important;
+}
+.discription .novalue{
+    color: #d3d3d3 !important;
+}
+.discription .swiper-container{
+    position: relative;
+}
+.discription .swiper-container .img_box{
+    line-height: 2.2rem;
+    color: #fff;
+    position: absolute;
+    background-color: rgba(10,10,10,.2);
+    bottom: 2rem;
+    right: .5rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    z-index: 1000;
+    border-radius: 999px;
+}

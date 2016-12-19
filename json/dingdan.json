@@ -1,0 +1,35 @@
+{
+  "code": 0,
+  "msg": "获取成功",
+  "data": {
+    "orderlist": [
+      {
+        "goods": [
+          {
+            "goodsid": "8",
+            "goodsname": "2016冬季男士棉衣青年外套韩版修身加厚学生连帽棉服潮流男装棉袄",
+            "goodscount": "1",
+            "goodsprice": "0.01",
+            "goodsimg": "/20161202/636162707121709422.png",
+            "goodstype": "颜色:白色,尺寸:S"
+          }
+        ],
+        "ordernumber": "1381414702201612061733588015",
+        "orderstate": "2",
+        "goodscount": "1",
+        "totalfee": "0.01",
+        "transportfee": "0.00",
+        "receiveid": "219",
+        "receivename": "璀璨",
+        "receivephone": "13212564371",
+        "receiveaddress": "重庆 渝中区  金开大道",
+        "createtime": "2016-12-06 17:58:33",
+        "craateuser": "崔灿"
+      }
+    ],
+    "pagesize": "10",
+    "pageindex": "0",
+    "pagecount": "1",
+    "count": "1"
+  }
+}

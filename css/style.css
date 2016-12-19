@@ -1,0 +1,173 @@
+/*手机端浏览器初始化样式*/
+body,html {
+    -webkit-text-size-adjust:none;
+    position: relative;
+    height: 100%;
+}
+/*object-fit*/
+video{
+    display: block !important;
+    position: static !important;
+    width: 102.2% !important;
+}
+.pull-right{
+    float: right;
+}
+.pull-left{
+    float: left;
+}
+* {
+    margin:0;
+    padding:0;
+    font-family:'PingFang SC Medium',"Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi;
+    -webkit-backface-visibility:hidden
+}
+
+.text-center{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+ul li{
+    list-style: none;
+}
+html {
+    -moz-text-size-adjust:none
+}
+body {
+    color:#181615;
+    background-color:#fff;
+    -webkit-touch-callout:none;
+    -moz-touch-callout:none;
+    -ms-touch-callout:none;
+    -o-touch-callout:none;
+    touch-callout:none;
+    text-size-adjust:none;
+    -webkit-appearance:none;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-user-drag:none;
+    -webkit-user-select:none;
+    text-align:justify;
+    text-justify:inter-ideograph
+}
+/*不显示播放进度条*/
+.vcp-controls-panel{
+    display: none !important;
+}
+/*图标*/
+/*购物车*/
+.icon{
+    display: block;
+    width: 26px;
+    height: 24px;
+    overflow: hidden;
+}
+.icon_add{
+    background: url("../img/icon.png")-77px 0 no-repeat;
+    background-size: 260px;
+    background-color: #e6e6e6;
+}
+.icon_reduce{
+    background: url("../img/icon.png")-52px 0 no-repeat;
+    background-size: 260px;
+    background-color: #e6e6e6;
+}
+.icon_nochoice{
+    background: url("../img/icon.png")-26px 0 no-repeat;
+    background-size: 260px;
+    height: 28px;
+}
+.icon_choice{
+    background: url("../img/icon.png")0 0 no-repeat;
+    background-size: 260px;
+    height: 28px;
+}
+.icon_delet{
+    background: url("../img/icon.png")-107px -1px no-repeat;
+    background-size: 269px;
+    width: 23px;
+}
+
+.icon_dulble{
+    background: url("../img/icon.png")-153px 0 no-repeat;
+    background-size: 270px;
+    height: 27px;
+    width: 26px;
+}
+.icon_location{
+    background: url("../img/icon.png")-193px 0 no-repeat;
+    background-size: 269px;
+    width: 23px;
+    height: 27px;
+}
+.icon_edit{
+    background: url("../img/icon.png")-130px -1px no-repeat;
+    background-size: 269px;
+    width: 23px;
+}
+.icon_more{
+    background: url("../img/good.png") 0 0 no-repeat;
+    background-size: 80px;
+    width: 40px;
+    height: 40px;
+}
+.icon_good{
+    background: url("../img/good.png") -40px 0 no-repeat;
+    background-size: 80px;
+    width: 40px;
+    height: 40px;
+}
+/*点赞图标*/
+.icon_heart{
+    background: url("../img/good_icon.png")0 0 no-repeat;
+    background-size: 110px;
+    height: 28px;
+    width: 33px;
+}
+.icon_gift{
+    background: url("../img/good_icon.png")0 -30px no-repeat;
+    background-size: 110px;
+    height: 28px;
+    width: 33px;
+}
+.icon_jewel{
+    background: url("../img/good_icon.png")-31px -30px no-repeat;
+    background-size: 110px;
+    height: 28px;
+    width: 33px;
+}
+.icon_sweet{
+    background: url("../img/good_icon.png")-54px 0 no-repeat;
+    background-size: 90px;
+    height: 28px;
+    width: 33px;
+}
+.icon_ice{
+    background: url("../img/good_icon.png")-33px 0 no-repeat;
+    background-size: 100px;
+    height: 30px;
+    width: 33px;
+
+}
+.icon_gift_g{
+    background: url("../img/good_icon.png")-60px -30px no-repeat;
+    background-size: 100px;
+    height: 30px;
+    width: 33px;
+}
+.live .push_store .discrip,.shopcar .discrip,.payment .payment_list .discription,.oderlist .discrip{
+    font-size: .70rem;
+    display: -webkit-box;
+    margin-top: .1rem;
+    line-height: 1.3em;
+    height: 2.4em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+.text-right{
+    text-align: right;
+}

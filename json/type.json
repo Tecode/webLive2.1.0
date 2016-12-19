@@ -1,0 +1,43 @@
+
+{
+  "code": 0,
+  "meg": "获取成功",
+  "data": {
+    "catagory": [
+      {
+        "name": "尺寸",
+        "attributevalue": [
+          {
+            "id": "703",
+            "name": "28",
+            "count": "0",
+            "price": "30"
+          },
+          {
+            "id": "704",
+            "name": "29",
+            "count": "10",
+            "price": "69.03"
+          }
+        ]
+      },
+      {
+        "name": "颜色",
+        "attributevalue": [
+          {
+            "id": "706",
+            "name": "28",
+            "count": "10",
+            "price": "0"
+          },
+          {
+            "id": "708",
+            "name": "29",
+            "count": "10",
+            "price": "0"
+          }
+        ]
+      }
+    ]
+  }
+}

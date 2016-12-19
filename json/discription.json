@@ -1,0 +1,33 @@
+
+{
+  "code": 0,
+  "msg": "查询商品信息成功",
+  "data": {
+    "goodsImgList": [
+      "http://paytest.51byod.cn/goodspic/20161130/636161283759113219.png",
+      "http://paytest.51byod.cn/goodspic/20161130/636161283761320335.png",
+      "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png",
+      "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166383120694864.png"
+    ],
+    "goodsId": "1",
+    "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161283759113219.png",
+    "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+    "goodsStock": "700",
+    "goodsPrice": "0.01",
+    "goodsImg": "http://paytest.51byod.cn/goodspic/20161130/636161283759113219.png"
+  },
+  "goods_list": [
+    {
+      "goodsDecImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png"
+    },
+    {
+      "goodsDecImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png"
+    },
+    {
+      "goodsDecImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png"
+    },
+    {
+      "goodsDecImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png"
+    }
+  ]
+}

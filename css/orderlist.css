@@ -1,0 +1,143 @@
+
+/*订单详情*/
+.oderlist .list-block ul{
+    background: none;
+}
+.oderlist .list-container li{
+    background: #fff;
+    margin-bottom: .4rem;
+}
+.oderlist .list-container .row{
+    background-color: #fafafa;
+    padding: .4rem .5rem .4rem .5rem;
+}
+.oderlist .tittle{
+    font-size: .9rem;
+    padding: .3rem .5rem .3rem .5rem;
+    font-weight: normal;
+}
+.oderlist .cmuch{
+    padding-top: .4rem;
+}
+.oderlist .much{
+    color: #ff5757;
+}
+.oderlist .type{
+    font-size: .70rem;
+    margin-top: .4rem;
+    background-color: #f1f1f1;
+    color: #7c7c7c;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+}
+.oderlist .price{
+    font-size: .8rem;
+}
+.oderlist .introduce{
+    color: #909090;
+    font-size: .7rem;
+    margin: 0;
+    padding: .2rem .3rem .4rem .5rem;
+    border-bottom: 1px solid #fafafa;
+}
+.oderlist .choice{
+    padding: .6rem 0;
+    font-size: .85rem;
+    font-weight: normal;
+    padding-right: .5rem;
+}
+.oderlist .pay{
+    background-color: #ff5757;
+    border-radius: .2rem;
+    padding: .2rem .6rem;
+    color: #fff;
+}
+.oderlist .detail{
+    color: #707070;
+    padding: .2rem .6rem;
+    border: 1px solid #c4c4c4;
+    border-radius: .2rem;
+}
+.oderlist .count{
+    color: #7c7c7c;
+}
+.oderlist .nopay{
+    color: #ff5757;
+}
+.oderlist .ordernumber{
+    color: #b2b2b2;
+}
+.text-rigth{
+    text-align: right;
+}
+/*详情和订单用一个css*/
+.address .left{
+    padding-top: .6rem;
+    padding-bottom: 1.1rem;
+}
+.address .right{
+    float: right;
+    background-color: #50b1ff;
+    padding: .2rem .8rem .2rem .8rem;
+    border-radius: .1rem;
+    margin-top: .5rem;
+    color: #ffffff;
+}
+.address i{
+    font-size: .9rem;
+    padding-right: .6rem;
+    color: #50b1ff;;
+}
+.payment .address{
+    background-color: #fff;
+    padding: .6rem 0;
+}
+.payment .address .box{
+    width: 75%;
+    margin: 0 auto;
+}
+.payment .address h3{
+    margin: 0;
+    font-size: .9rem;
+    font-weight: normal;
+}
+.payment .noaddress a{
+    display: block;
+    color: #505050;
+}
+.payment .noaddress .icon_dulble{
+    position: absolute;
+    top:.6rem;
+    left: .5rem;
+}
+.payment .address p{
+    margin: 0;
+    font-size: .75rem;
+}
+.payment .address .icon_edit{
+    position: absolute;
+    right: .4rem;
+    top:.8rem;
+}
+.payment .address .icon_location{
+    position: absolute;
+    left: .4rem;
+    top:.8rem;
+}
+#listDetails .order_info{
+    padding: .8rem .5rem 1rem .5rem;
+    background-color: #fff;
+    border-bottom: 1px solid #fafafa;
+}
+#listDetails .haveaddress{
+    position: relative;
+}
+#listDetails .order_info h4{
+    font-weight: normal;
+}
+#listDetails .order_info .pay_nopay{
+    padding: 0 .5rem;
+    background-color: #ff6262;
+    color: #fff;
+    border-radius: .2rem;
+}

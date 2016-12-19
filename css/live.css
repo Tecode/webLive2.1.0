@@ -1,0 +1,357 @@
+
+/*直播使用IE10及以上浏览器*/
+.live_box .vcp-player{
+    overflow: hidden;
+    height: 100%;
+    width: 100% !important;
+}
+.live_box{
+    position: static;
+    height: 100%;
+    z-index: 1;
+}
+.live_box .live_info_box{
+    position: absolute;
+    top: .8rem;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+}
+.live_box .live_info_box .box{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-between;
+}
+.live_box .anchor{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    background-color: rgba(0,0,0,.2);
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    margin-left: .5rem;
+}
+.live_box .anchor img{
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 999px;
+    margin-top: .1rem;
+}
+.live_box .user_info{
+    font-size: .7rem;
+    line-height: .95rem;
+    color: #fff;
+    margin-left: .4rem;
+    width: 4rem;
+}
+.live_box .room_name{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.live_box .audience_list{
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    margin-top: .2rem;
+    margin-right: .3rem;
+}
+.live_box .audience_list img{
+    width: 100%;
+    height: 100%;
+    border-radius: 999px;
+}
+.live_box .audience_list li{
+    margin-right: .2rem;
+}
+.live_box .audience_list a{
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.live_box .living{
+    background-color: #ffd855;
+    font-size: .7rem;
+    color: #f9743a;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin-top: .2rem;
+    border-radius: 999px;
+    padding: 0 .2rem;
+    white-space: nowrap;
+}
+
+/*聊天信息*/
+.live_box .content_box{
+    position: absolute;
+    height: 14rem;
+    width: 13rem;
+    bottom: 4rem;
+    left: .5rem;
+    color: #fff;
+    z-index: 3;
+    overflow-y: auto;
+}
+.live_box .content_box .content{
+    position: relative;
+    background-color: #fff;
+    border-radius: .4rem;
+}
+.live_box .content_box .content figure{
+    border-bottom-left-radius: .4rem;
+    border-top-left-radius: .4rem;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    position: absolute;
+    width: 2rem;
+    height: 100%;
+}
+.live_box .content_info{
+    margin-left: 2.2rem;
+    font-size: .8rem;
+    color: #505050;
+}
+.live_box .content_list li{
+    margin-bottom: .5rem;
+}
+.live_box .content_info dd{
+    font-size: .9rem;
+    line-height: 1.8rem;
+    width: 10rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.live_box .content_info dt{
+    padding-bottom: .4rem;
+    padding-right: .2rem;
+}
+/*类型*/
+.user_type{
+    color: #fff;
+    font-size: .7rem;
+    border-radius: 99px;
+    padding: .1rem .4rem;
+}
+/*欢迎用户*/
+.welcome_info{
+    font-size: .9rem;
+}
+/*底部选择按钮*/
+.live_box footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+/*推送商品*/
+.goods_box{
+    position: fixed;
+    bottom: -21rem;
+    left: 0;
+    width: 100%;
+    height: 21rem;
+    z-index: 5;
+    background-color: #f0f2f5;
+}
+.goods_box .navbar{
+    background-color: #fff;
+}
+.goods_box .swiper-no-swiping{
+    padding: .6rem 0;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    border-top: 2px solid #fff;
+}
+/*购物车*/
+.goods_box footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: #f74949;
+    z-index: 6;
+    line-height: 2.5rem;
+}
+.goods_box footer a{
+    padding: .5rem 0;
+    color: #fff;
+}
+.goods_box .gutter{
+    overflow: hidden;
+    height: 5.2rem;
+    margin-left: .5rem;
+}
+.goods_box figure,.goods_box section{
+    float: left;
+    font-size: .9rem;
+}
+.goods_box figure img{
+    margin-top: .2rem;
+}
+.goods_box figure{
+    width: 25%;
+}
+.goods_box section{
+    width: 75%;
+}
+.goods_box section .discrip{
+    display: -webkit-box;
+    display: box;
+    height: 2.5rem;
+    color: #000;
+    padding: 0 .5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    padding-top: .1rem;
+}
+.goods_box .too_look{
+    background-color: #f74949;
+    font-size: .86rem;
+    padding: .2rem .6rem;
+    color: #fff;
+    border-radius: 999px;
+}
+.goods_box .too_look a{
+    color: #fff;
+}
+.goods_box .much{
+    font-size: 1.0rem;
+    color: #f74949;
+}
+.goods_box .discrip_info{
+    overflow: hidden;
+    padding: 0 .5rem;
+    margin-top: .8rem;
+}
+.goods_box .store_info{
+    padding: 0 .5rem;
+    overflow: hidden;
+    padding-top: .2rem;
+}
+.goods_box .store_info small{
+    color: #999;
+}
+.goods_box .store_info .icon-shopcar{
+    margin-top: .8rem;
+}
+.content_ls{
+    background-color: #f0f2f5;
+}
+.content_ls .push_store{
+    background-color: #fff;
+    padding: .5rem 0 .8rem 0;
+    border-top: 1px solid #f1f1f1;
+}
+.time_m{
+    background-color: #f0f2f5;
+    padding: .2rem .8rem;
+    font-size: .8rem;
+    border-radius: 999px;
+}
+.time_tip{
+    padding-bottom: .5rem;
+}
+/*图标*/
+.icon-shopcar{
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../img/shop_car.png") no-repeat;
+    background-size: 1.5rem;
+}
+.active {
+    color: #f74949;
+    border-top-color: #f74949 !important;
+ }
+
+/*弹出动画*/
+@-webkit-keyframes showInUp {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, -21rem, 0);
+        transform: translate3d(0, -21rem, 0);
+    }
+}
+
+@keyframes showInUp {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, -21rem, 0);
+        transform: translate3d(0, -21rem, 0);
+    }
+}
+
+.showInUp {
+    -webkit-animation-name: showInUp;
+    animation-name: showInUp;
+}
+/*隐藏动画*/
+@-webkit-keyframes showOutDown {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, -21rem, 0);
+        transform: translate3d(0, -21rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes showOutDown {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, -21rem, 0);
+        transform: translate3d(0, -21rem, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.showOutDown {
+    -webkit-animation-name: showOutDown;
+    animation-name: showOutDown;
+}
+.animatedShowBox {
+    -webkit-animation-duration: 0.8s;
+    animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}

@@ -1,0 +1,27 @@
+{
+  "code": 0,
+  "cart_list": [
+    {
+      "cid": 2,
+      "gid": 2,
+      "gname": "针织连衣裙秋冬款2016新款女装长款毛衣裙打底裙长袖修身显瘦长裙",
+      "gurl": null,
+      "gprice": 0.03,
+      "gcount": 3,
+      "gimg": "http://paytest.51byod.cn/goodspic/20161130/636161284861889939.png",
+      "gstock": 600,
+      "goodsattrval": "童装"
+    },
+    {
+      "cid": 1,
+      "gid": 1,
+      "gname": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "gurl": null,
+      "gprice": 0.03,
+      "gcount": 1,
+      "gimg": "http://paytest.51byod.cn/goodspic/20161130/636161283754161857.png",
+      "gstock": 700,
+      "goodsattrval": "颜色"
+    }
+  ]
+}

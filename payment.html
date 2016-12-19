@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>手机直播商城</title>
+    <link rel="stylesheet" href="js/bower_components/sui_mobile/dist/css/sm.min.css">
+    <link rel="stylesheet" href="js/bower_components/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shopcar.css">
+</head>
+<body>
+<div class="page-group shopcar">
+    <!--//付款页面-->
+    <div class="page payment page-current" id='payment'>
+        <div class="address haveaddress" style="display: none">
+            <i class="icon icon_location"></i>
+            <i class="icon icon_edit"></i>
+            <div class="box">
+                <h3>收货人：<span class="shouhuo">小明</span>   <span class="dianhua">1306526541</span></h3>
+                <p class="dizhi">重庆市两江新区金开大道西段106号互联网产业园11栋腾讯众创空间</p>
+            </div>
+        </div>
+        <div class="noaddress address" style="display: none">
+            <a href="#addaddress" class="box">
+                <h3>添加收货人信息</h3>
+                <i class="icon icon_dulble"></i>
+            </a>
+        </div>
+        <section>
+            <h3 class="tittle">商品信息</h3>
+            <ul class="payment_list">
+                <!--删除-->
+                <li>
+                <a style="display: block" class="row">
+                <div class="col-33">
+                <img src="img/push_image.jpg" width="100%">
+                </div>
+                <div class="col-66">
+                <div class="discription">
+                betu百图时尚荷叶袖绣花衬衫女气质OL五分袖衬衣浅蓝B3M
+                </div>
+                <div class="info clearfix">
+                <span>蓝色尺码M</span>
+                <span class="pull-right">￥159 X1</span>
+                </div>
+                </div>
+                </a>
+                </li>
+                <!--删除-->
+            </ul>
+        </section>
+        <section class="value">
+            <h3 class="tittle">
+                <span>商品信息</span>
+                <span class="pull-right">2件</span>
+            </h3>
+            <h3 class="tittle">
+                <span>运费</span>
+                <span class="pull-right">免运费</span>
+            </h3>
+            <h3 class="tittle">
+                <span>活动优惠</span>
+                <span class="pull-right">-10</span>
+            </h3>
+        </section>
+        <div class="nav_footer row">
+            <div class="col-66 choice_btn">
+                <a href="javascript:;" class="clearfix">
+                    <div class="pull-left" style="color: #ff4242">实付款：￥369.50</div>
+                </a>
+            </div>
+            <div class="col-33">
+                <a href="javascript:;" class="btn-red text-center">去付款</a>
+            </div>
+        </div>
+    </div>
+    <!--//填写地址-->
+    <div class="page addaddress" id="addaddress">
+        <div class="content">
+            <form class="addressForm">
+                <ul class="list">
+                    <li class="row">
+                        <div class="col-33">
+                            <label for="person">收货人</label>
+                        </div>
+                        <div class="col-66">
+                            <input type="text" id="person" placeholder="收货人的姓名" name="name">
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="col-33">
+                            <label for="phone">手机号码</label>
+                        </div>
+                        <div class="col-66">
+                            <input type="text" id="phone" name="phone" placeholder="11位手机号码">
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="col-33">
+                            <label for="city-picker">选择地区</label>
+                        </div>
+                        <div class="col-66">
+                            <input type="text" id="city-picker" name="area" placeholder="所在地区" readonly="readonly">
+                        </div>
+                    </li>
+                    <li class="row">
+                        <div class="col-33">
+                            <label for="addresss">详细地址</label>
+                        </div>
+                        <div class="col-66">
+                            <input type="text" id="addresss" name="address" placeholder="街道、楼牌号等">
+                        </div>
+                    </li>
+                </ul>
+                <div class="errortips text-center" style="display: none">账号错误！</div>
+            </form>
+            <button type="button">确定</button>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/webLive.im.js"></script>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+<script src="js/bower_components/echo/echo.js"></script>
+<script src="js/bower_components/zepto/zepto.touch.js"></script>
+<script>
+    var payPageListUrl = 'json/paypage.json';//付款页面商品展示
+    var postadressUrl  = 'json/shoppingCarList.json';//保存地址
+    var cloudMail = {
+        //显示订单详情
+        payPageAjax:function (pData) {
+        window.liveim.initAjax(payPageListUrl, 'get', pData, function (result) {
+            if (result.code == 0 && result) {
+                // 生成新条目的HTML
+                var html = '';
+                var listData = result.data.orderlist[0].goods;
+                for (var i = 0; i < listData.length; i++) {
+                    html += '<li><a style="display: block" class="row"><div class="col-33"><img src="' + listData[i].goodsimg + '" width="100%">' +
+                        '</div><div class="col-66"><div class="discription">' + listData[i].goodsname + '</div><div class="info clearfix">' +
+                        '<span>' + listData[i].goodstype + '</span><span class="pull-right">￥' + listData[i].goodsprice + ' X' + listData[i].goodscount + '</span></div></div></a></li>';
+                }
+                $('#payment').find('.payment_list').html(html);
+                if (result.data.orderlist[0].receivename == "") {
+                    $('.haveaddress').hide();
+                    $('.noaddress').show();
+                } else {
+                    $('.haveaddress').show();
+                    $('.noaddress').hide();
+                    //填充地址
+                    $("input[name='name']").val(result.data.orderlist[0].receivename);
+                    $("input[name='phone']").val(result.data.orderlist[0].receivephone);
+                    $("input[name='area']").val(result.data.orderlist[0].receivearea);
+                    $("input[name='address']").val(result.data.orderlist[0].receiveaddress);
+                    //显示地址
+                    $('.payment .shouhuo').text(result.data.orderlist[0].receivename);
+                    $('.payment .dianhua').text(result.data.orderlist[0].receivephone);
+                    $('.payment .dizhi').text(result.data.orderlist[0].receivearea.replace(" ", '') + result.data.orderlist[0].receiveaddress);
+                    //实际付款
+                    $('#payment').find('.choice_btn .pull-left').text('实付款：￥'+result.data.orderlist[0].totalfee);
+                    //订单信息
+                    $('.value .tittle .pull-right').eq(0).text(result.data.orderlist[0].goods.length+'件');
+                    $('.value .tittle .pull-right').eq(1).text(result.data.orderlist[0].transportfee);
+                    $('.value .tittle .pull-right').eq(2).text('0.00')
+
+                }
+            }
+        });
+        //编辑地址
+        $('.payment .icon_edit').on('touchend', function () {
+                //编辑地址页面
+                $.router.load("#addaddress");
+        })
+    },
+        //填写地址
+        addAddress:function () {
+            $('.addaddress').on('touchend', '.addaddress button', function () {
+                var pData = {};
+                if($("input[name='name']").val().length==0){
+                    errortip('请填写姓名!');
+                    return false;
+                }else if(!/^1[34578]\d{9}$/.test($("input[name='phone']").val())){
+                    errortip('电话号码格式错误!');
+                    return false;
+                }else if($("input[name='area']").val().length==0){
+                    errortip('请选择地区!');
+                    return false;
+                }else if($("input[name='address']").val().length==0){
+                    errortip('请填写详细地址!');
+                    return false;
+                }else {
+                    $.each($('.addressForm').serializeArray(), function (index, child) {
+                        pData[child.name] = child.value;
+                    });
+                    //保存地址
+                    cloudMail.postadress(pData);
+                }
+            });
+            //城市选择
+            $("#city-picker").cityPicker({
+                toolbarTemplate: '<header class="bar bar-nav">\
+            <button class="button button-link pull-right close-picker">确定</button>\
+            <h1 class="title">选择收货地址</h1>\
+            </header>'
+            });
+
+            function errortip(value) {
+                $('.errortips').text(value).show();
+                setTimeout(function () {
+                    $('.errortips').hide().text();
+                }, 1800)
+            }
+        },
+        //保存收货地址
+        postadress:function (pData) {
+        window.liveim.initAjax(postadressUrl, 'post', pData, function (result) {
+            if (result.code == 0 && result) {
+                $.toast('保存成功');
+                $.router.back();//返回上一页
+            } else {
+                $.toast(result.msg);
+            }
+        })
+    }
+    };
+    $(function () {
+        cloudMail.payPageAjax();
+        cloudMail.addAddress();
+    })
+</script>
+</html>

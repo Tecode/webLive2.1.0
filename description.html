@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>直播商品详情</title>
+    <link rel="stylesheet" href="js/bower_components/sui_mobile/dist/css/sm.min.css">
+    <link rel="stylesheet" href="js/bower_components/swiper/dist/css/swiper.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/discription.css">
+</head>
+<body>
+<div class="page-group discription">
+    <!--//查看详细信息-->
+    <div class="page discription page-current" id="discription1">
+            <div class="content goods">
+                <div class="banner">
+                    <div class="swiper-container" data-autoHeight='true' id="banner" data-space='10'>
+                        <div class="swiper-wrapper">
+                            <!--<div class="swiper-slide">-->
+                                <!--<img src="img/55e668d5N4252aeea.jpg" width="100%" alt="">-->
+                            <!--</div>-->
+                        </div>
+                        <div class="img_box text-center"><span style="font-size: 1.0rem" class="activepage">1</span>/<span class="allpage">5</span></div>
+                    </div>
+                </div>
+
+                <div class="discription_text">
+                    <!--删除-->
+                    <!--<dl class="content-padded">-->
+                        <!--<dd class="color-default" style="font-size: .9rem">贝壳家族beikejiazu童装女童短袖儿童夏装韩版新款上衣彩星星</dd>-->
+                        <!--<dd class="color-danger">绣花图案设计，百搭经典，六一特惠</dd>-->
+                        <!--<dt><span class="big color-danger">￥51</span>-->
+                            <!--<span class="del">库存剩余500</span>-->
+                        <!--</dt>-->
+                    <!--</dl>-->
+                    <!--删除-->
+                </div>
+                <div class="chose-box">
+                    <div class="row text-center">
+                        <div class="discriptioninfo text-center">
+                            <span>商品详情</span>
+                        </div>
+                    </div>
+                    <div class="box-img">
+                        <!--<img alt="" src="img/55e668d5N4252aeea.jpg" width="100%">-->
+                    </div>
+                </div>
+            </div>
+            <div class="nav_footer row">
+                <div class="col-20">
+                    <i class="icon icon_shopcarnobg nobg">
+                        <span class="car_count">45</span>
+                    </i>
+                </div>
+                <div class="col-80 choice_btn">
+                    <a href="#discription2" class="btn-yellow addcar text-center">加入购物车</a>
+                    <a href="#discription2" class="btn-red buy text-center">立即购买</a>
+                </div>
+            </div>
+        </div>
+    <!--//购买选择属性-->
+    <div class="page discription" id="discription2">
+        <div class="content goods">
+            <div class="banner">
+                <div class="swiper-container" data-autoHeight='true' data-space='10'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="img/55e668d5N4252aeea.jpg" width="100%" alt="">
+                        </div>
+                    </div>
+                    <!--<div class="swiper-pagination"></div>-->
+                </div>
+            </div>
+
+            <div class="text">
+                <div class="discription_text_next"></div>
+                <!--<dl class="content-padded">-->
+                    <!--<dd class="color-default" style="font-size: .9rem">贝壳家族beikejiazu童装女童短袖儿童夏装韩版新款上衣彩星星</dd>-->
+                    <!--<dd class="color-danger">绣花图案设计，百搭经典，六一特惠</dd>-->
+                    <!--<dt><span class="big color-danger">￥<span class="store_much">51</span></span>-->
+                        <!--<span class="del">库存剩余500</span>-->
+                    <!--</dt>-->
+                <!--</dl>-->
+                    <ul class="type">
+                        <li>
+                            <div class="heard_tips">信息类型</div>
+                            <div class="value">
+                                <span class="valueactive">花露水</span>
+                                <span>离得</span>
+                                <span>阿斯旺路水</span>
+                                <span>离得</span>
+                                <span>阿斯旺路水</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="heard_tips">信息类型</div>
+                            <div class="value">
+                                <span>花露水</span>
+                                <span class="novalue">离得</span>
+                                <span>阿斯旺路水</span>
+                            </div>
+                        </li>
+                    </ul>
+                <button class="submitbuttom" type="button">确定</button>
+                <a class="back text-center" type="button" style="margin-bottom: 2rem">返回</a>
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script src="js/bower_components/zepto/zepto.touch.js"></script>
+<script src="js/bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
+<script src="js/webLive.im.js"></script>
+<script src="js/bower_components/echo/echo.js"></script>
+<script>
+    var url = {
+        discriptionUrl:'json/discription.json',//获取详情
+        getGoodsTypeUrl:'json/type.json'//获取商品类型
+    };
+    var cloudMail = {
+        discription:function (pData) {
+            window.liveim.initAjax(url.discriptionUrl, 'get', pData, function (result) {
+                if (result.code == 0 && result) {
+                    goodsId = result.data.goodsId;//定义成了全局变量使用完清除
+                    goodsPrice = result.data.goodsPrice;//定义成了全局变量使用完清除
+                    $('.allpage').text(result.data.goodsImgList.length);
+                    var banner = '';
+                    $.each(result.data.goodsImgList, function (index, child) {
+                        banner += '<div class="swiper-slide"><img src="' + child + '" width="100%" alt=""></div>';
+                    });
+                    $('#banner').find('.swiper-wrapper').html(banner);
+                    //轮播
+                    var navbanner = new Swiper('#banner', {
+                        onSlideChangeEnd: function (swiper) {
+                            $('.activepage').text(swiper.activeIndex + 1);
+                        }
+                    });
+                    //文字描述
+                    $('.discription_text').html(
+                        '<dl class="content-padded"><dd class="color-default" style="font-size: .9rem">' + result.data.goodsName + '</dd>' +
+                        '<dd class="color-danger">喜欢就买吧，机会不容错过哦！</dd><dt><span class="big color-danger">￥' + result.data.goodsPrice + '</span><span class="del">库存剩余' + result.data.goodsStock + '</span></dt></dl>'
+                    );
+                    //属性文字描述
+                    $('.discription_text_next').html('<dl class="content-padded"><dd class="color-default" style="font-size: .9rem">' + result.data.goodsName + '</dd>' +
+                        '<dt><span class="big color-danger">￥<span class=store_much>' + result.data.goodsPrice + '</span></span><span class="del">库存剩余' + result.data.goodsStock + '</span></dt></dl>'
+                    );
+                    //图片描述
+                    var images = '';
+                    $.each(result.goods_list, function (index, child) {
+                        images += '<img alt="" src="' + child.goodsDecImg + '" width="100%">'
+                    });
+                    $('.box-img').html(images);
+
+                } else {
+                    $.toast(result.msg);
+                }
+            })
+        },
+        getGoodsType:function (pData) {
+            window.liveim.initAjax(url.getGoodsTypeUrl, 'get', pData, function (result) {
+                if (result.code == 0 && result) {
+                    console.info(result.data.catagory);
+                    var typelist = '';
+                    //循环商品属性
+                    $.each(result.data.catagory, function (index, child) {
+                        typelist += '<li><div class="heard_tips">' + child.name + '</div><div class="value">' + (function () {
+                                var type = '';
+                                $.each(child.attributevalue, function (index, el) {
+                                    type += '<span class=' + (function () {
+                                            if (el.count == 0) {
+                                                return 'novalue';
+                                            } else {
+                                                return '';
+                                            }
+                                        })() + ' style="' + (function () {
+                                            if (el.count == 0) {
+                                                return 'pointer-events:none';
+                                            } else {
+                                                return '';
+                                            }
+                                        })() + '" data-id="' + el.id + '" data-count="' + el.count + '" data-price="' + el.price + '">' + el.name + '</span>'
+                                });
+                                return type;
+                            })() + '</div></li>'
+                    });
+                    $('#discription2').find('.type').html(typelist);
+                } else {
+                    $.toast(result.msg);
+                }
+            })
+        },
+        goodsInfo:function () {
+            var postdata = {type: 0};
+            $('.discription .type').on('touchend', 'span', function () {
+                if ($(this).hasClass('valueactive')) {
+                    $(this).removeClass('valueactive');
+                } else {
+                    $(this).addClass('valueactive')
+                        .siblings('span').removeClass('valueactive')
+                }
+
+                if ($('.type li').length == $('.type .valueactive').length) {
+                    var toltalMuch = null;
+                    var count = [];
+                    $('.type .valueactive').each(function (index, child) {
+                        toltalMuch += parseFloat($(child).attr('data-price'));
+                        count.push(parseFloat($(child).attr('data-count')))
+                    });
+                    $('.del').text('库存剩余' + Math.min.apply('', count));
+                    $('.store_much').text(parseFloat(goodsPrice) + toltalMuch);
+                } else {
+                    $('.store_much').text(parseFloat(goodsPrice));
+                }
+            });
+            //立即购买还是加入购物车
+            $('.choice_btn a').on('touchend', function () {
+                postdata.value = $(this).index();
+            });
+            //确定属性
+            $('.submitbuttom').on('touchend', function () {
+                if ($('.type li').length == $('.type .valueactive').length) {
+                    var ids = '';
+                    $('.type .valueactive').each(function (index, child) {
+                        ids += $(child).attr('data-id') + ',';
+                    });
+                    postdata.ids = ids.substring(0, ids.length - 1);
+                    postdata.goodsId = goodsId;
+                    cloudMail.pushValue(postdata);
+                } else {
+                    $.toast('还有属性未选择！')
+                }
+            })
+        }
+    };
+    $(function () {
+        cloudMail.discription();
+        cloudMail.getGoodsType();
+        cloudMail.goodsInfo();
+    })
+</script>
+</html>
