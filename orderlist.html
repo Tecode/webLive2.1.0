@@ -95,22 +95,22 @@
         <section>
             <h3 class="tittle">商品信息</h3>
             <ul class="payment_list">
-                <li>
-                <a style="display: block" class="row">
-                <div class="col-33">
-                <img src="img/push_image.jpg" width="100%">
-                </div>
-                <div class="col-66">
-                <div class="discription">
-                betu百图时尚荷叶袖绣花衬衫女气质OL五分袖衬衣浅蓝B3M
-                </div>
-                <div class="info clearfix">
-                <span>蓝色尺码M</span>
-                <span class="pull-right">￥159 X1</span>
-                </div>
-                </div>
-                </a>
-                </li>
+                <!--<li>-->
+                    <!--<a style="display: block" class="row">-->
+                    <!--<div class="col-33">-->
+                    <!--<img src="img/push_image.jpg" width="100%">-->
+                    <!--</div>-->
+                    <!--<div class="col-66">-->
+                    <!--<div class="discription">-->
+                    <!--betu百图时尚荷叶袖绣花衬衫女气质OL五分袖衬衣浅蓝B3M-->
+                    <!--</div>-->
+                    <!--<div class="info clearfix size">-->
+                    <!--<span>蓝色尺码M</span>-->
+                    <!--<span class="pull-right">￥159 X1</span>-->
+                    <!--</div>-->
+                    <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
             </ul>
         </section>
         <section class="value">
@@ -241,7 +241,7 @@
                         $.each(storeList, function (index, child) {
                             html += '<li><a style="display: block" class="row"><div class="col-33"><img src="' + child.goodsimg + '" width="100%">' +
                                 '</div><div class="col-66"><div class="discription">' + child.goodsname + '</div>' +
-                                '<div class="info clearfix"><span>' + child.goodstype + '</span><span class="pull-right" style="margin-right: .5rem;color:#505050;">￥' + child.goodsprice + ' X' + child.goodscount + '</span></div></div></a></li>'
+                                '<div class="info clearfix"><span class="size">' + child.goodstype + '</span><span class="pull-right" style="margin-right: .5rem;color:#505050;">￥' + child.goodsprice + ' X' + child.goodscount + '</span></div></div></a></li>'
                         });
                         return html;
                     })(fillData.goods) + '</ul></section>' +

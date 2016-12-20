@@ -141,3 +141,23 @@
     color: #fff;
     border-radius: .2rem;
 }
+/*订单详情*/
+.payment_list .discription{
+    color: #505050;
+}
+.payment_list .info {
+    margin-top: 1rem;
+    font-size: .7rem;
+    color: #707070;
+}
+.payment_list .size{
+    background-color: #fafafa;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+}
+.payment_list .pull-right{
+    font-size: .9rem;
+}
+.payment_list li{
+    padding: .2rem .5rem;
+}

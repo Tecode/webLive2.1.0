@@ -86,7 +86,7 @@
     position: absolute;
     height: 14rem;
     width: 13rem;
-    bottom: 4rem;
+    bottom: 3rem;
     left: .5rem;
     color: #fff;
     z-index: 3;
@@ -139,12 +139,86 @@
     font-size: .9rem;
 }
 /*底部选择按钮*/
-.live_box footer{
+.live_box footer,.live_box .send_infobox{
+    overflow: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    text-align: center;
+    z-index: 4;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: space-between;
+    height: 2.2rem;
+}
+.live_box footer input{
+    height: 1.8rem;
+    outline: none;
+    margin-top: .2rem;
+    width: 100%;
+    border: none;
+    background: rgba(0,0,0,.2);
+    border-radius: 999px;
+    text-indent: .5em;
+}
+.live_box footer .left{
+    margin-left: .5rem;
+    flex: 60%;
+
+}
+.live_box footer .right{
+    margin-right: .5rem;
+    flex: 40%;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    justify-content: flex-end;
+}
+.live_box footer .right i{
+    margin-left: .4rem;
+    margin-top: .1rem;
+}
+/*底部按钮图标*/
+.icon_sm{
+    display: block;
+    height: 2.2rem;
+}
+.icon_plus{
+    background: url("../img/footer_icon.png")0 0 no-repeat;
+    background-size: 100px;
+    width: 32px;
+}
+.icon_store{
+     background: url("../img/footer_icon.png")-34px 0 no-repeat;
+     background-size: 100px;
+     width: 34px;
+ }
+.icon_like{
+    background: url("../img/footer_icon.png")-67px 0 no-repeat;
+    background-size: 100px;
+    width: 33px;
+}
+
+/*发送消息输入框*/
+.send_infobox{
+    background-color: #fff;
+}
+.send_infobox .input{
+    flex: 3;
+    padding-left: .5rem;
+}
+.send_infobox input{
+    width: 100%;
+    outline: none;
+    margin-top: .4rem;
+    height: 1.4rem;
+    border: none;
+    border-right: 1px solid #dedede;
+}
+.send_infobox .send{
+    flex: 1;
+    padding-right: .5rem;
+    color: #ff8b18;
+    line-height: 2.2rem;
 }
 /*推送商品*/
 .goods_box{
@@ -310,6 +384,49 @@
     -webkit-animation-name: showInUp;
     animation-name: showInUp;
 }
+/*等级图标*/
+.iconLv{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    width: 12px;
+    height: 14px;
+}
+.icon_lv1{
+    background: url("../img/vip_icon6.png")0 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv2{
+    background: url("../img/vip_icon6.png")-13px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv3{
+    background: url("../img/vip_icon6.png")-27px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv4{
+    background: url("../img/vip_icon6.png")-41px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv5{
+    background: url("../img/vip_icon6.png")-54px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv6{
+    background: url("../img/vip_icon6.png")-67px 0 no-repeat;
+    background-size: 80px;
+}
+/*更多功能*/
+.more_fn{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 160px;
+    z-index: 5;
+    background-color: #fff;
+}
 /*隐藏动画*/
 @-webkit-keyframes showOutDown {
     from, 60%, 75%, 100%, to {
@@ -350,8 +467,10 @@
     animation-name: showOutDown;
 }
 .animatedShowBox {
-    -webkit-animation-duration: 0.8s;
-    animation-duration: 0.8s;
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
+    animation-timing-function:ease-in-out;
+    -webkit-animation-timing-function:ease-in-out;
 }
