@@ -1,0 +1,80 @@
+
+{
+  "code": 0,
+  "msg": "查询商品信息成功",
+  "count":"5",
+  "data": [
+    {
+      "goodsImg": "img/push_image.jpg",
+      "goodsId": "1",
+      "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161283754161857.png",
+      "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "goodsStock": "700",
+      "goodsPrice": "0.01"
+    },
+    {
+      "goodsImg": "img/push_image.jpg",
+      "goodsId": "1",
+      "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161283759113219.png",
+      "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "goodsStock": "700",
+      "goodsPrice": "0.01"
+    },
+    {
+      "goodsImg": "img/push_image.jpg",
+      "goodsId": "1",
+      "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161283761320335.png",
+      "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "goodsStock": "700",
+      "goodsPrice": "0.01"
+    },
+    {
+      "goodsImg": "img/push_image.jpg",
+      "goodsId": "1",
+      "goodsLink": "http://paytest.51byod.cn/webapi/images/goodsimage/20161206/636166342838784909.png",
+      "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "goodsStock": "700",
+      "goodsPrice": "0.01"
+    },
+    {
+      "goodsImg": "img/push_image.jpg",
+      "goodsId": "1",
+      "goodsLink": "img/push_image.jpg",
+      "goodsName": "羽绒服男中长款加厚青年冬季连帽外套纯色韩版潮大码学生修身空",
+      "goodsStock": "700",
+      "goodsPrice": "0.01"
+    },
+    {
+      "goodsImg": "http://paytest.51byod.cn/goodspic/20161130/636161284861889939.png",
+      "goodsId": "2",
+      "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161284861889939.png",
+      "goodsName": "针织连衣裙秋冬款2016新款女装长款毛衣裙打底裙长袖修身显瘦长裙",
+      "goodsStock": "600",
+      "goodsPrice": "0.02"
+    },
+    {
+      "goodsImg": "http://paytest.51byod.cn/goodspic/20161130/636161284862427069.png",
+      "goodsId": "2",
+      "goodsLink": "http://paytest.51byod.cn/goodspic/20161130/636161284862427069.png",
+      "goodsName": "针织连衣裙秋冬款2016新款女装长款毛衣裙打底裙长袖修身显瘦长裙",
+      "goodsStock": "600",
+      "goodsPrice": "0.02"
+    },
+    {
+      "goodsImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161202/636162801072530250.png",
+      "goodsId": "2",
+      "goodsLink": "http://paytest.51byod.cn/webapi/images/goodsimage/20161202/636162801072530250.png",
+      "goodsName": "针织连衣裙秋冬款2016新款女装长款毛衣裙打底裙长袖修身显瘦长裙",
+      "goodsStock": "600",
+      "goodsPrice": "0.02"
+    },
+    {
+      "goodsImg": "http://paytest.51byod.cn/webapi/images/goodsimage/20161202/636162802591749420.png",
+      "goodsId": "2",
+      "goodsLink": "http://paytest.51byod.cn/webapi/images/goodsimage/20161202/636162802591749420.png",
+      "goodsName": "针织连衣裙秋冬款2016新款女装长款毛衣裙打底裙长袖修身显瘦长裙",
+      "goodsStock": "600",
+      "goodsPrice": "0.02"
+    }
+  ]
+}

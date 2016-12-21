@@ -140,7 +140,6 @@
 }
 /*底部选择按钮*/
 .live_box footer,.live_box .send_infobox{
-    overflow: hidden;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -344,7 +343,111 @@
     color: #f74949;
     border-top-color: #f74949 !important;
  }
-
+/*等级图标*/
+.iconLv{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    width: 12px;
+    height: 14px;
+}
+.icon_lv1{
+    background: url("../img/vip_icon6.png")0 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv2{
+    background: url("../img/vip_icon6.png")-13px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv3{
+    background: url("../img/vip_icon6.png")-27px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv4{
+    background: url("../img/vip_icon6.png")-41px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv5{
+    background: url("../img/vip_icon6.png")-54px 0 no-repeat;
+    background-size: 80px;
+}
+.icon_lv6{
+    background: url("../img/vip_icon6.png")-67px 0 no-repeat;
+    background-size: 80px;
+}
+/*更多功能*/
+.more_fn{
+    width: 100%;
+    position: absolute;
+    bottom: -160px;
+    left: 0;
+    height: 160px;
+    z-index: 5;
+    background-color: #fff;
+}
+.more_fn .swiper-container{
+    height: 100%;
+}
+/*功能图标栏*/
+.fn_iconbox section{
+    overflow: hidden;
+}
+.fn_iconbox .icon_box{
+    display: block;
+    padding: 1.2rem 0 0 0;
+    float: left;
+    width: 25%;
+    height: auto;
+}
+.fn_iconbox .icon_box small{
+    color: #606060;
+    padding-top: .8rem;
+    font-size: .7rem;
+}
+/*功能图标*/
+.fn_iconbox i{
+    display: block;
+    height: 30px;
+    margin: 0 auto;
+}
+.icon_order{
+    background: url("../img/function.png")0 0 no-repeat;
+    width: 26px;
+    background-size: 150px;
+}
+.icon_shopcart{
+    background: url("../img/function.png")-36px 0 no-repeat;
+    width: 32px;
+    background-size: 145px;
+}
+.icon_report{
+    background: url("../img/function.png")-77px 0 no-repeat;
+    width: 32px;
+    background-size: 145px;
+}
+.icon_share{
+    background: url("../img/function.png")-114px 0 no-repeat;
+    width: 32px;
+    background-size: 145px;
+}
+/*点赞盒子*/
+.like_box{
+    width: 30px;
+    height: 25px;
+    background-color: #0a8ddf;
+    position: absolute;
+    top: -30px;
+    right: .5rem;
+}
+/*空白页*/
+.none_page{
+    color: #6a6a6a;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*弹出动画*/
 @-webkit-keyframes showInUp {
     from, 60%, 75%, 100%, to {
@@ -383,49 +486,6 @@
 .showInUp {
     -webkit-animation-name: showInUp;
     animation-name: showInUp;
-}
-/*等级图标*/
-.iconLv{
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 2px;
-    width: 12px;
-    height: 14px;
-}
-.icon_lv1{
-    background: url("../img/vip_icon6.png")0 0 no-repeat;
-    background-size: 80px;
-}
-.icon_lv2{
-    background: url("../img/vip_icon6.png")-13px 0 no-repeat;
-    background-size: 80px;
-}
-.icon_lv3{
-    background: url("../img/vip_icon6.png")-27px 0 no-repeat;
-    background-size: 80px;
-}
-.icon_lv4{
-    background: url("../img/vip_icon6.png")-41px 0 no-repeat;
-    background-size: 80px;
-}
-.icon_lv5{
-    background: url("../img/vip_icon6.png")-54px 0 no-repeat;
-    background-size: 80px;
-}
-.icon_lv6{
-    background: url("../img/vip_icon6.png")-67px 0 no-repeat;
-    background-size: 80px;
-}
-/*更多功能*/
-.more_fn{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 160px;
-    z-index: 5;
-    background-color: #fff;
 }
 /*隐藏动画*/
 @-webkit-keyframes showOutDown {
@@ -467,10 +527,209 @@
     animation-name: showOutDown;
 }
 .animatedShowBox {
-    -webkit-animation-duration: 0.4s;
-    animation-duration: 0.4s;
+    -webkit-animation-duration: 0.6s;
+    animation-duration: 0.6s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
     animation-timing-function:ease-in-out;
     -webkit-animation-timing-function:ease-in-out;
+}
+/*功能面板展示*/
+@-webkit-keyframes swipIn {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, -160px, 0);
+        transform: translate3d(0, -160px, 0);
+    }
+}
+
+@keyframes swipIn {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, -160px, 0);
+        transform: translate3d(0, -160px, 0);
+    }
+}
+
+.swipIn {
+    -webkit-animation-name: swipIn;
+    animation-name: swipIn;
+}
+/*功能面板隐藏*/
+@-webkit-keyframes swipOut {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, -160px, 0);
+        transform: translate3d(0, -160px, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes swipOut {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: ease;
+        animation-timing-function: ease;
+    }
+
+    from {
+        -webkit-transform: translate3d(0, -160px, 0);
+        transform: translate3d(0, -160px, 0);
+    }
+
+    100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.swipOut {
+    -webkit-animation-name: swipOut;
+    animation-name: swipOut;
+}
+/*点赞图标向左上移动*/
+@-webkit-keyframes swimmingUp {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale(.6,.6);;
+        transform: translate3d(0, 0, 0) scale(.6,.6);;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1rem, -15rem, 0) scale(1.8,1.8);;
+        transform: translate3d(-1rem, -15rem, 0) scale(1.8,1.8);;
+    }
+}
+
+@keyframes swimmingUp {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale(.6,.6);;
+        transform: translate3d(0, 0, 0) scale(.6,.6);;
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(-1rem, -15rem, 0) scale(1.8,1.8);;
+        transform: translate3d(-1rem, -15rem, 0) scale(1.8,1.8);;
+    }
+}
+/*点赞图标向右上移动*/
+@-webkit-keyframes swimmingUpR {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale(.5,.5);
+        transform: translate3d(0, 0, 0) scale(.5,.5);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(.5rem, -15rem, 0) scale(1.5,1.5);
+        transform: translate3d(.5rem, -15rem, 0) scale(1.5,1.5);
+    }
+}
+
+@keyframes swimmingUpR {
+    from, 60%, 75%, 100%, to {
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+    }
+
+    from {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0) scale(.5,.5);
+        transform: translate3d(0, 0, 0) scale(.5,.5);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translate3d(.5rem, -15rem, 0) scale(1.5,1.5);
+        transform: translate3d(.5rem, -15rem, 0) scale(1.5,1.5);
+    }
+}
+.swimmingUpLeft {
+    -webkit-animation-name: swimmingUp;
+    animation-name: swimmingUp;
+}
+.swimmingUpRight {
+    -webkit-animation-name: swimmingUpR;
+    animation-name: swimmingUpR;
+}
+.animate_swimming{
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+/*点赞图标*/
+.icon0{
+    background: url("../img/love_icon.png")0 0 no-repeat;
+    background-size: 120px;
+}
+.icon1{
+    background: url("../img/love_icon.png")-29px 0 no-repeat;
+    background-size: 120px;
+}
+.icon2{
+    background: url("../img/love_icon.png")-59px 0 no-repeat;
+    background-size: 120px;
+}
+.icon3{
+    background: url("../img/love_icon.png")-90px 0 no-repeat;
+    background-size: 120px;
+}
+.icon4{
+    background: url("../img/love_icon.png")0 -26px no-repeat;
+    background-size: 120px;
+}
+.icon5{
+    background: url("../img/love_icon.png")-29px -26px no-repeat;
+    background-size: 120px;
+}
+.icon6{
+    background: url("../img/love_icon.png")-59px -26px no-repeat;
+    background-size: 120px;
+}
+.icon7{
+    background: url("../img/love_icon.png")-90px -26px no-repeat;
+    background-size: 120px;
 }

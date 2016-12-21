@@ -80,6 +80,9 @@
                 case '1005':
                     options.activeData(data.content);
                     break;
+                case '1007':
+                    //聊天信息
+                    break;
             }
         }
     }
