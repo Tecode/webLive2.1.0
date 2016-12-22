@@ -342,15 +342,21 @@ var cloudMail = {
                 // 生成新条目的HTML
                 var html = '';
                 var listData = result.data;
-                for (var i = 0; i < listData.length; i++) {
-                    html += '<li class="push_store"><div class="gutter"><figure><img src="img/bb8b43bdd565e5a06cf7a84d837fdb6f.jpg" alt="pic" data-echo="img/push_image.jpg" width="100%">'
-                        + '</figure><section><div class="discrip">' + listData[i].goodsName + '</div><div class="store_info"><div class="pull-left">'
-                        + '<small>商品数量：' + listData[i].goodsStock + '</small><div class="much">￥21.00</div></div><div class="pull-right">'
-                        + '<div class="icon-shopcar"></div></div></div></section></div></li>';
+                if(result.data.length!=0){
+                    $('#allList').find('.list-container').children().first().css('display','none');
+
+                    for (var i = 0; i < listData.length; i++) {
+                        html += '<li class="push_store"><div class="gutter"><figure><img src="img/bb8b43bdd565e5a06cf7a84d837fdb6f.jpg" alt="pic" data-echo="img/push_image.jpg" width="100%">'
+                            + '</figure><section><div class="discrip">' + listData[i].goodsName + '</div><div class="store_info"><div class="pull-left">'
+                            + '<small>商品数量：' + listData[i].goodsStock + '</small><div class="much">￥21.00</div></div><div class="pull-right">'
+                            + '<div class="icon-shopcar"></div></div></div></section></div></li>';
+                    }
+                    cloudMail.pager('#allList', html, result.count, function () {
+                        cloudMail.getAllList({pageIndex: arguments[0]});
+                    }, 1);
+                }else {
+                    $('#allList').find('.list-container').children().first().css('display','block');
                 }
-                cloudMail.pager('#allList', html, result.count, function () {
-                    cloudMail.getAllList({pageIndex: arguments[0]});
-                }, 1);
             }
         })
     },

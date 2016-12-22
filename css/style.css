@@ -8,6 +8,17 @@ body,html {
 img{
     display: block;
 }
+/*没有消息*/
+.none_info{
+    color: #707070;
+}
+.none_info img{
+    display: block;
+    width: 120px;
+    padding-top: 1rem;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+}
 /*object-fit*/
 video{
     display: block !important;
