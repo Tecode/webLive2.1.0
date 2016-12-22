@@ -122,18 +122,14 @@ var cloudMail = {
             },
             //推送活动
             activeData: function () {
-                arguments[0].time = parseInt(new Date().getTime());
-                var arr = [];
-                arr.push(arguments[0]);
+                if($('.push_box .push_storebox').children().length==2){
+                    $('.push_box .push_storebox').children().first().remove();
+                }
+                $('.push_box .push_storebox').append('<li><a style="display: block" href="'+arguments[0].activityLink+'"><figure class="pull-left"><img src='+arguments[0].activityImg+' width="100%">'
+                    +'</figure><div class="discrip pull-left">'+arguments[0].activityName+'</div><div style="clear: both"></div>'
+                    +'<i class="close_button icon_close"></i></a></li>');
 
-                $('.live .push_info').show();
-                $('.userimg').attr('src', arguments[0].activityImg);
-                $('.push_info a').attr('href', arguments[0].activityLink);
-                $('.dsp').text(arguments[0].activityName);
-
-                var pushList = arr.concat(cloudMail.getCookie('pushList'));
-                cloudMail.setCookie('pushList', pushList);
-                cloudMail.pushGoodsList(0);
+                $('.push_box .push_storebox').children().last().css('left','0');
             },
             people: function () {
                 //进来的人
@@ -141,19 +137,14 @@ var cloudMail = {
             },
             //推送商品
             pushStroe: function () {
-                arguments[0].time = parseInt(new Date().getTime());
-                var arr = [];
-                arr.push(arguments[0]);
+                if($('.push_box .push_storebox').children().length==2){
+                    $('.push_box .push_storebox').children().first().remove();
+                }
+                $('.push_box .push_storebox').append('<li><a style="display: block" href="'+arguments[0].goodsLink+'"><figure class="pull-left"><img src='+arguments[0].goodsImg+' width="100%">'
+                    +'</figure><div class="discrip pull-left">'+arguments[0].goodsName+'</div><div style="clear: both"></div>'
+                    +'<i class="close_button icon_close"></i></a></li>');
 
-                $('.live .push_info').show();
-                $('.push_info a').attr('href', arguments[0].goodsLink);
-                $('.userimg').attr('src', arguments[0].goodsImg);
-                $('.dsp').text(arguments[0].goodsName);
-
-                var pushList = arr.concat(cloudMail.getCookie('pushList'));
-
-                cloudMail.setCookie('pushList', pushList);
-                cloudMail.pushGoodsList(1);
+                $('.push_box .push_storebox').children().last().css('left','0');
             }
 
         };
@@ -204,6 +195,14 @@ var cloudMail = {
                 $('.send_infobox').hide();
                 $(this).siblings('.input').children('input').val('');
             }
+        });
+//        关闭推送的活动或者商品
+        $('.push_storebox').on('touchend','.push_box .close_button',function () {
+            var self = this;
+            $(this).parents('li').css('left','-300px');
+            setTimeout(function () {
+                $(self).parents('li').remove();
+            },400)
         });
 //                点击商店图标
         $('.right .icon_store').on('touchend', function () {

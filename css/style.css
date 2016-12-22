@@ -5,6 +5,9 @@ body,html {
     height: 100%;
     overflow: hidden;
 }
+img{
+    display: block;
+}
 /*object-fit*/
 video{
     display: block !important;
