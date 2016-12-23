@@ -50,7 +50,7 @@ img{
     color: #999;
 }
 .discription .canchange nav{
-    font-size: .9rem;
+    font-size: .8rem;
 }
 .discription .canchange{
     background-color: #fff;
@@ -160,7 +160,7 @@ img{
     line-height: 2.6rem;
     background-color:#ff4242;
     color: #fff;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .discription .nav_footer .btn-yellow{
@@ -169,16 +169,16 @@ img{
     line-height: 2.6rem;
     background-color:#ffba00;
     color: #fff;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 .discription .icon_shopcarnobg{
     background: url("../img/shopcar_nobg.png")0 0 no-repeat;
-    background-size: 40px;
-    width: 40px;
-    height: 40px;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
 }
 .discription .nav_footer .nobg{
-    margin-top: .5rem;
+    margin-top: .7rem;
     position: relative;
 }
 .discription .nav_footer .car_count{
@@ -188,8 +188,8 @@ img{
     background-color: #ff5757;
     color: #fff;
     font-weight: lighter;
-    padding: .1rem .2rem;
-    font-size: .7rem;
+    padding: 0 .3rem;
+    font-size: .6rem;
     border-radius: 999px;
 }
 .discription .submitbuttom{
