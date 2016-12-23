@@ -285,6 +285,11 @@ var cloudMail = {
         }
         //写入消息
         $(".content_box").find('.content_list').append(content);
+
+    //    当有人发信息时滚动到最底部
+        if((".content_box").find('.content_list').children().length>5){
+            $('.content_box').scrollTop($('.content_box>div').height());
+        }
     },
     pager: function (listContainer, htmlContent, pageCount, fn, eq) {
         //图片延时加载（插件修改过）
