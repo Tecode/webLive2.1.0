@@ -5,7 +5,7 @@
     overflow: hidden;
     width: 100%;
     height: 2.6rem;
-    background-color: #fff;
+    background-color: #fafafa;
     margin: 0;
 }
 .nav_footer .choice_btn{
@@ -116,11 +116,11 @@
     margin-top: .5rem;
 }
 .payment section h3{
-    font-size: .9rem;
     font-weight: normal;
     border-bottom: 1px solid #fafafa;
     padding: .4rem 0;
     margin-left: .5rem;
+    font-size: .8rem;
 }
 .payment .payment_list li{
     padding-bottom: .5rem;
@@ -130,15 +130,18 @@
 .payment .payment_list .col-33{
     padding: .4rem .4rem .4rem 0;
 }
+.payment_list a{
+    height: 4rem;
+}
 .payment .payment_list .discription{
     margin-top: .4rem;
-    font-size: .9rem;
+    font-size: .7rem;
     color: #505050;
     margin-right: .5rem;
 }
 .payment .payment_list .info{
     margin-top: .6rem;
-    font-size: .9rem;
+    font-size: .7rem;
 }
 .payment .value {
     padding-bottom: 3.5rem;

@@ -72,7 +72,7 @@
                 </a>
             </div>
             <div class="col-33">
-                <a href="javascript:;" class="btn-red text-center">去付款</a>
+                <a href="javascript:;" id="toPay" class="btn-red text-center">去付款</a>
             </div>
         </div>
     </div>
@@ -128,12 +128,14 @@
 <script src="js/bower_components/echo/echo.js"></script>
 <script src="js/bower_components/zepto/zepto.touch.js"></script>
 <script>
-    var payPageListUrl = 'json/paypage.json';//付款页面商品展示
-    var postadressUrl  = 'json/shoppingCarList.json';//保存地址
+    var url = {
+        payPageListUrl : 'json/paypage.json',//付款页面商品展示
+        postadressUrl : 'json/shoppingCarList.json'//保存地址
+    };
     var cloudMail = {
         //显示订单详情
         payPageAjax:function (pData) {
-        window.liveim.initAjax(payPageListUrl, 'get', pData, function (result) {
+        window.liveim.initAjax(url.payPageListUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
                 // 生成新条目的HTML
                 var html = '';
@@ -173,6 +175,46 @@
         $('.payment .icon_edit').on('touchend', function () {
                 //编辑地址页面
                 $.router.load("#addaddress");
+        });
+//            去付款
+        $('#toPay').on('touchend',function () {
+            if(!$('.haveaddress').css('display')=='block'){
+                $.toast("请选择收货地址");
+            }else {
+//            微信支付接口
+                WeixinJSBridge.invoke(
+                    'getBrandWCPayRequest', paydata,
+                    function (res) {
+                        //支付成功回调
+                        if (res.err_msg == "get_brand_wcpay_request：ok") {
+                            $.ajax({
+                                url: "/VIPuser/WXuser/UserPaystate",
+                                type: "post",
+                                datatype: "json",
+                                data: { out_trade_no: out_trade_no },
+                                success: function (result) {
+                                    if (result.code == 0) {
+                                        //$('.weui_dialog_alert').show()
+                                        var data = $(".checked").attr("data-value") || $o_money.val();
+                                        dialog.showAlert({ title: "提示", content: "充值:" + data + " 元成功.", autoClose: false });
+                                        window.location.href("/vipuser/wxuser/userindx");
+                                    }
+                                }
+                            });
+                        }     // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。
+                    }
+                );
+                //微信支付判断
+                if (typeof WeixinJSBridge == "undefined") {
+                    if (document.addEventListener) {
+                        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+                    } else if (document.attachEvent) {
+                        document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                        document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+                    }
+                }
+
+            }
         })
     },
         //填写地址
@@ -216,7 +258,7 @@
         },
         //保存收货地址
         postadress:function (pData) {
-        window.liveim.initAjax(postadressUrl, 'post', pData, function (result) {
+        window.liveim.initAjax(url.postadressUrl, 'post', pData, function (result) {
             if (result.code == 0 && result) {
                 $.toast('保存成功');
                 $.router.back();//返回上一页

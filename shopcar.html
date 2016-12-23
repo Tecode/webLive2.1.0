@@ -260,7 +260,7 @@
                 $(this).siblings('input').val(value);
                 //计算数量
                 toltal();
-                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+//                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
 
             });
             //键盘输入
@@ -275,7 +275,7 @@
                     $.toast("不能大于商品的库存量！");
                 }
 
-                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+//                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
             });
             //增加商品
             clickBox.on('touchend', '.shopcar .list-container .icon_add', function () {
@@ -290,7 +290,7 @@
                 value = value > maxCount ? maxCount : value;
                 $(this).siblings('input').val(value);
                 toltal();
-                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
+//                cloudMail.postCarNumber({totalCount:cloudMail.toltalShopCarCount()});
             });
             //全部选择
             $('.nav_footer .choice_btn .icon_nochoice').on('touchend', function () {
@@ -325,7 +325,8 @@
                             count: $(child).parents('.shopcar_list').find('input').val()
                         });
                     });
-                    cloudMail.toPay(JSON.stringify(pd));
+                    window.location = 'payment.html';
+//                    cloudMail.toPay(JSON.stringify(pd));
                 } else {
                     $.toast("请选择商品！")
                 }
