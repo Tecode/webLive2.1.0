@@ -12,8 +12,8 @@
     padding: .4rem .5rem .4rem .5rem;
 }
 .oderlist .tittle{
-    font-size: .9rem;
-    padding: .3rem .5rem .3rem .5rem;
+    font-size: .8rem;
+    padding: .4rem .5rem .4rem .5rem;
     font-weight: normal;
 }
 .oderlist .cmuch{
@@ -42,9 +42,19 @@
 }
 .oderlist .choice{
     padding: .6rem 0;
-    font-size: .85rem;
+    font-size: .80rem;
     font-weight: normal;
     padding-right: .5rem;
+}
+.goHome{
+    display: block;
+    width: 96%;
+    margin: 1rem auto;
+    border: none;
+    padding: .4rem;
+    border-radius: .2rem;
+    color: #fff;
+    background-color: #ff5757;
 }
 .oderlist .pay{
     background-color: #ff5757;
