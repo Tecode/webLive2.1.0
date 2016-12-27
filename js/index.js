@@ -3,7 +3,8 @@
  */
 var url = {
     getAllListUrl: 'json/allList.json',//获取边看边买列表
-    getAnchorPushUrl:'json/getAnchorPush.json'
+    getAnchorPushUrl:'json/getAnchorPush.json',//
+    getGoodsTypeUrl: 'json/type.json'//获取商品类型
 };
 var icon =['swimmingUpRight','swimmingUpLeft'];
 var cloudMail = {
@@ -127,9 +128,12 @@ var cloudMail = {
                 }
                 $('.push_box .push_storebox').append('<li><a style="display: block" href="'+arguments[0].activityLink+'"><figure class="pull-left"><img src='+arguments[0].activityImg+' width="100%">'
                     +'</figure><div class="discrip pull-left">'+arguments[0].activityName+'</div><div style="clear: both"></div>'
-                    +'<i class="close_button icon_close"></i></a></li>');
+                    +'</i></a><i class="close_button icon_close"></li>');
 
                 $('.push_box .push_storebox').children().last().css('left','0');
+
+
+                cloudMail.showPushList(arguments[0].activityImg,arguments[0].activityName,null,arguments[0].activityLink);
             },
             people: function () {
                 //进来的人
@@ -145,12 +149,28 @@ var cloudMail = {
                     +'<i class="close_button icon_close"></i></a></li>');
 
                 $('.push_box .push_storebox').children().last().css('left','0');
+                cloudMail.showPushList(arguments[0].goodsImg,arguments[0].goodsName,null,arguments[0].goodsLink);
             }
 
         };
         //初始化
         liveim.login(iminfo);
 
+    },
+    //推送活动或商品显示在列表里面
+    showPushList:function (img,name,price,link) {
+        //    在推送商品里面显示推送的活动
+        $('#recommendList').find('.list-container').children().first().before('<li class="push_store"><p class="text-center time_tip"><span class="time_m">主播推送</span></p>'
+            +'<div class="gutter"><figure><img src="'+img+'" alt="pic" width="100%">'
+            +'</figure><section><div class="discrip">'+name+'</div><div class="discrip_info">'
+            +'<div class="pull-left"><div class="much">'+(function () {
+                if(price==null){
+                    return '';
+                }else {
+                    return '￥<span style="font-size: 1.4rem">'+price+'</span>';
+                }
+            })()+'</div>'
+            +'</div><div class="pull-right too_look"><a href='+link+'>查看</a></div></div></section></div></li>');
     },
     eventInit: function () {
 //          初始化更多功能滑动菜单
@@ -246,6 +266,52 @@ var cloudMail = {
 
 
         });
+    //    点击购物车选择商品属性
+        $("#allList").find(".list-container").on("touchend",".icon-shopcar",function () {
+            //获取商品属性
+            cloudMail.getValue();
+
+
+            $('.type_mask').show().css("opacity",.8);
+            !function ($domNode) {
+                if($domNode.hasClass('showOutDown')){
+                    $domNode.show().removeClass('showOutDown');
+                }else {
+                    $domNode.show().addClass('showInUp');
+                }
+            }($('.choice_type'))
+        });
+    //    关闭属性选项
+        $('.type_mask').on("touchend",function () {
+            $('.type_mask').css("opacity",0);
+            $('.choice_type').addClass('showOutDown');
+            setTimeout(function () {
+                $('.type_mask').hide();
+                $('.choice_type').hide();
+            },500);
+        });
+    //    选择单个属性
+        $('.choice_type .value_button').on('touchend', 'span', function () {
+            if ($(this).hasClass('valueactive')) {
+                $(this).removeClass('valueactive');
+            } else {
+                $(this).addClass('valueactive')
+                    .siblings('span').removeClass('valueactive')
+            }
+
+            if ($('.value_button li').length == $('.value_button .valueactive').length) {
+                var toltalMuch = null;
+                var count = [];
+                $('.value_button .valueactive').each(function (index, child) {
+                    toltalMuch += parseFloat($(child).attr('data-price'));
+                    count.push(parseFloat($(child).attr('data-count')))
+                });
+                $('.del').text('库存剩余' + Math.min.apply('', count));
+                $('.store_much').text(parseFloat(goodsPrice) + toltalMuch);
+            } else {
+                $('.store_much').text(parseFloat(goodsPrice));
+            }
+        });
     },
     //显示即时消息
     showListInfo: function (type, userName, userimg, text) {
@@ -287,7 +353,7 @@ var cloudMail = {
         $(".content_box").find('.content_list').append(content);
 
     //    当有人发信息时滚动到最底部
-        if((".content_box").find('.content_list').children().length>5){
+        if($(".content_box").find('.content_list').children().length>5){
             $('.content_box').scrollTop($('.content_box>div').height());
         }
     },
@@ -373,13 +439,45 @@ var cloudMail = {
                 var html = '';
                 var listData = result.data;
                 for (var i = 0; i < listData.length; i++) {
-                    html += '<li class="push_store"><p class="text-center time_tip"><span class="time_m">3分钟前</span></p>'
+                    html += '<li class="push_store"><p class="text-center time_tip"><span class="time_m">主播推送</span></p>'
                         +'<div class="gutter"><figure><img src="'+listData[i].goodsImg+'" alt="pic" data-echo="'+listData[i].goodsImg+'" width="100%">'
                         +'</figure><section><div class="discrip">'+listData[i].goodsName+'</div><div class="discrip_info">'
                         +'<div class="pull-left"><div class="much">￥<span style="font-size: 1.4rem">'+listData[i].goodsPrice+'</span></div>'
-                        +'</div><div class="pull-right too_look"><a href="javascript:void (0);">查看商品</a></div></div></section></div></li>';
+                        +'</div><div class="pull-right too_look"><a href="javascript:void (0);">查看</a></div></div></section></div></li>';
                 }
                 $('#recommendList').find('.list-container').html(html);
+            }
+        })
+    },
+    getValue:function (pData) {
+        window.liveim.initAjax(url.getGoodsTypeUrl, 'get', pData, function (result) {
+            if (result.code == 0 && result) {
+                var typelist = '';
+                //循环商品属性
+                $.each(result.data.catagory, function (index, child) {
+                    typelist += '<li><div class="heard_tips">' + child.name + '</div><div class="value">' + (function () {
+                            var type = '';
+                            $.each(child.attributevalue, function (index, el) {
+                                type += '<span class=' + (function () {
+                                        if (el.count == 0) {
+                                            return 'novalue';
+                                        } else {
+                                            return '';
+                                        }
+                                    })() + ' style="' + (function () {
+                                        if (el.count == 0) {
+                                            return 'pointer-events:none';
+                                        } else {
+                                            return '';
+                                        }
+                                    })() + '" data-id="' + el.id + '" data-count="' + el.count + '" data-price="' + el.price + '">' + el.name + '</span>'
+                            });
+                            return type;
+                        })() + '</div></li>'
+                });
+                $('.choice_type').find('.value_button').html(typelist);
+            } else {
+
             }
         })
     }
