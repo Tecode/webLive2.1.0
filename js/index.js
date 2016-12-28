@@ -3,10 +3,11 @@
  */
 var url = {
     getAllListUrl: 'json/allList.json',//获取边看边买列表
-    getAnchorPushUrl:'json/getAnchorPush.json',//
-    getGoodsTypeUrl: 'json/type.json'//获取商品类型
+    getAnchorPushUrl: 'json/getAnchorPush.json',//
+    getGoodsTypeUrl: 'json/type.json',//获取商品类型
+    pushValueUrl:'json/getAnchorPush.json'//添加到购物车保存商品属性
 };
-var icon =['swimmingUpRight','swimmingUpLeft'];
+var icon = ['swimmingUpRight', 'swimmingUpLeft'];
 var cloudMail = {
     tips: function (time) {
         setTimeout(function () {
@@ -117,39 +118,39 @@ var cloudMail = {
                 var imgslist = '';
                 $.each(arguments[0].imageList, function (index, child) {
                     if (index > 4) return;
-                    imgslist += '<li><a href="javascript:void(0)"><img src='+child+'></a></li>';
+                    imgslist += '<li><a href="javascript:void(0)"><img src=' + child + '></a></li>';
                 });
                 $('.audience_list').html(imgslist);
             },
             //推送活动
             activeData: function () {
-                if($('.push_box .push_storebox').children().length==2){
+                if ($('.push_box .push_storebox').children().length == 2) {
                     $('.push_box .push_storebox').children().first().remove();
                 }
-                $('.push_box .push_storebox').append('<li><a style="display: block" href="'+arguments[0].activityLink+'"><figure class="pull-left"><img src='+arguments[0].activityImg+' width="100%">'
-                    +'</figure><div class="discrip pull-left">'+arguments[0].activityName+'</div><div style="clear: both"></div>'
-                    +'</i></a><i class="close_button icon_close"></li>');
+                $('.push_box .push_storebox').append('<li><a style="display: block" href="' + arguments[0].activityLink + '"><figure class="pull-left"><img src=' + arguments[0].activityImg + ' width="100%">'
+                    + '</figure><div class="discrip pull-left">' + arguments[0].activityName + '</div><div style="clear: both"></div>'
+                    + '</i></a><i class="close_button icon_close"></li>');
 
-                $('.push_box .push_storebox').children().last().css('left','0');
+                $('.push_box .push_storebox').children().last().css('left', '0');
 
 
-                cloudMail.showPushList(arguments[0].activityImg,arguments[0].activityName,null,arguments[0].activityLink);
+                cloudMail.showPushList(arguments[0].activityImg, arguments[0].activityName, null, arguments[0].activityLink);
             },
             people: function () {
                 //进来的人
-                cloudMail.showListInfo(arguments[0].type,arguments[0].user, arguments.uimg)
+                cloudMail.showListInfo(arguments[0].type, arguments[0].user, arguments.uimg)
             },
             //推送商品
             pushStroe: function () {
-                if($('.push_box .push_storebox').children().length==2){
+                if ($('.push_box .push_storebox').children().length == 2) {
                     $('.push_box .push_storebox').children().first().remove();
                 }
-                $('.push_box .push_storebox').append('<li><a style="display: block" href="'+arguments[0].goodsLink+'"><figure class="pull-left"><img src='+arguments[0].goodsImg+' width="100%">'
-                    +'</figure><div class="discrip pull-left">'+arguments[0].goodsName+'</div><div style="clear: both"></div>'
-                    +'<i class="close_button icon_close"></i></a></li>');
+                $('.push_box .push_storebox').append('<li><a style="display: block" href="' + arguments[0].goodsLink + '"><figure class="pull-left"><img src=' + arguments[0].goodsImg + ' width="100%">'
+                    + '</figure><div class="discrip pull-left">' + arguments[0].goodsName + '</div><div style="clear: both"></div>'
+                    + '<i class="close_button icon_close"></i></a></li>');
 
-                $('.push_box .push_storebox').children().last().css('left','0');
-                cloudMail.showPushList(arguments[0].goodsImg,arguments[0].goodsName,null,arguments[0].goodsLink);
+                $('.push_box .push_storebox').children().last().css('left', '0');
+                cloudMail.showPushList(arguments[0].goodsImg, arguments[0].goodsName, null, arguments[0].goodsLink);
             }
 
         };
@@ -158,24 +159,24 @@ var cloudMail = {
 
     },
     //推送活动或商品显示在列表里面
-    showPushList:function (img,name,price,link) {
+    showPushList: function (img, name, price, link) {
         //    在推送商品里面显示推送的活动
         $('#recommendList').find('.list-container').children().first().before('<li class="push_store"><p class="text-center time_tip"><span class="time_m">主播推送</span></p>'
-            +'<div class="gutter"><figure><img src="'+img+'" alt="pic" width="100%">'
-            +'</figure><section><div class="discrip">'+name+'</div><div class="discrip_info">'
-            +'<div class="pull-left"><div class="much">'+(function () {
-                if(price==null){
+            + '<div class="gutter"><figure><img src="' + img + '" alt="pic" width="100%">'
+            + '</figure><section><div class="discrip">' + name + '</div><div class="discrip_info">'
+            + '<div class="pull-left"><div class="much">' + (function () {
+                if (price == null) {
                     return '';
-                }else {
-                    return '￥<span style="font-size: 1.4rem">'+price+'</span>';
+                } else {
+                    return '￥<span style="font-size: 1.4rem">' + price + '</span>';
                 }
-            })()+'</div>'
-            +'</div><div class="pull-right too_look"><a href='+link+'>查看</a></div></div></section></div></li>');
+            })() + '</div>'
+            + '</div><div class="pull-right too_look"><a href=' + link + '>查看</a></div></div></section></div></li>');
     },
     eventInit: function () {
 //          初始化更多功能滑动菜单
-        var mySwiper = new Swiper ('#more_fn', {
-            pagination : '.swiper-pagination'
+        var mySwiper = new Swiper('#more_fn', {
+            pagination: '.swiper-pagination'
         });
 //          点击屏幕
         $('.vcp-bigplay').on('touchend', function () {
@@ -189,15 +190,17 @@ var cloudMail = {
             }
             $('.send_infobox').hide();
         }
+
 //            隐藏功能区
         function hiddenFn() {
-            if($('.more_fn').hasClass('swipIn')){
+            if ($('.more_fn').hasClass('swipIn')) {
                 $('.more_fn').addClass('swipOut')
             }
         }
+
 //            点击购物车
         $('.shopping').parents('footer').on('click', function () {
-            alert(100)
+            console.info($(this).attr('data-json'))
         });
 //                点击聊天区域
 //            隐藏主播推送的物品
@@ -217,12 +220,12 @@ var cloudMail = {
             }
         });
 //        关闭推送的活动或者商品
-        $('.push_storebox').on('touchend','.push_box .close_button',function () {
+        $('.push_storebox').on('touchend', '.push_box .close_button', function () {
             var self = this;
-            $(this).parents('li').css('left','-300px');
+            $(this).parents('li').css('left', '-300px');
             setTimeout(function () {
                 $(self).parents('li').remove();
-            },400)
+            }, 400)
         });
 //                点击商店图标
         $('.right .icon_store').on('touchend', function () {
@@ -234,7 +237,7 @@ var cloudMail = {
             }
         });
 //            点击更多图标 icon_plus
-        $('.right .icon_plus').on('touchend',function () {
+        $('.right .icon_plus').on('touchend', function () {
             if ($('.more_fn').hasClass('swipOut')) {
                 $('.more_fn').removeClass('swipOut');
             } else {
@@ -242,55 +245,63 @@ var cloudMail = {
             }
         });
 //            点赞图标
-        $('.right .icon_like').on('touchend',function () {
-            if($('.like_box').length>20){
+        $('.right .icon_like').on('touchend', function () {
+            if ($('.like_box').length > 20) {
                 $('.like_box').first().remove();
             }
             //style="-webkit-animation-duration: 2.4s;animation-duration: 2.4s;"
-            $('footer .right').append($('<div class="like_box icon'+Math.floor(Math.random() * 8)+' animate_swimming '+(function () {
-                    return(icon[Math.floor(Math.random() * 2)])
-                })()+'"></div>').css({"animation-duration":(function (value) {
-                if(value<1){
-                    return 2.4;
-                }else {
-                    return value;
-                }
-            })(Math.random() * 6)+'s',"-webkit-animation-duration":(function (value) {
-                if(value<1){
-                    return 2.4;
-                }else {
-                    return value;
-                }
-            })(Math.random() * 6)+'s'}))
-
-
-
+            $('footer .right').append($('<div class="like_box icon' + Math.floor(Math.random() * 8) + ' animate_swimming ' + (function () {
+                    return (icon[Math.floor(Math.random() * 2)])
+                })() + '"></div>').css({
+                "animation-duration": (function (value) {
+                    if (value < 1) {
+                        return 2.4;
+                    } else {
+                        return value;
+                    }
+                })(Math.random() * 6) + 's', "-webkit-animation-duration": (function (value) {
+                    if (value < 1) {
+                        return 2.4;
+                    } else {
+                        return value;
+                    }
+                })(Math.random() * 6) + 's'
+            }))
         });
-    //    点击购物车选择商品属性
-        $("#allList").find(".list-container").on("touchend",".icon-shopcar",function () {
+        //    点击购物车选择商品属性
+        $("#allList").find(".list-container").on("touchend", ".icon-shopcar", function () {
+            var jsonData = JSON.parse($(this).attr('data-json'));
+            $('section .type_info').html('<figure class="pull-left"><img src="' + jsonData.goodsImg + '" width="100%">'
+                + '</figure><section class="pull-left"><div class="discrip">' + jsonData.goodsName + '</div>'
+                + '<span class="price">￥<span class="store_much">' + jsonData.goodsPrice + '</span></span>'
+                + '<span class="count">库存剩余：' + jsonData.goodsStock + '</span></section>');
+
+
+            goodsPrice = jsonData.goodsPrice;//定义成了全局变量使用完清除
+            goodsId = jsonData.goodsId; //全局变量
+            // console.info(JSON.parse($(this).attr('data-json')));
             //获取商品属性
-            cloudMail.getValue();
+            cloudMail.getValue({goodsId: jsonData.goodsId});
 
-
-            $('.type_mask').show().css("opacity",.8);
+            $('.type_mask').show().css("opacity", .8);
             !function ($domNode) {
-                if($domNode.hasClass('showOutDown')){
+                if ($domNode.hasClass('showOutDown')) {
                     $domNode.show().removeClass('showOutDown');
-                }else {
+                } else {
                     $domNode.show().addClass('showInUp');
                 }
             }($('.choice_type'))
         });
-    //    关闭属性选项
-        $('.type_mask').on("touchend",function () {
-            $('.type_mask').css("opacity",0);
+        //    关闭属性选项
+        $('.type_mask').on("touchend", function () {
+            $('.type_mask').css("opacity", 0);
             $('.choice_type').addClass('showOutDown');
             setTimeout(function () {
                 $('.type_mask').hide();
                 $('.choice_type').hide();
-            },500);
+            }, 500);
         });
-    //    选择单个属性
+        //    选择单个属性
         $('.choice_type .value_button').on('touchend', 'span', function () {
             if ($(this).hasClass('valueactive')) {
                 $(this).removeClass('valueactive');
@@ -306,54 +317,81 @@ var cloudMail = {
                     toltalMuch += parseFloat($(child).attr('data-price'));
                     count.push(parseFloat($(child).attr('data-count')))
                 });
-                $('.del').text('库存剩余' + Math.min.apply('', count));
+                $('.count').text('库存剩余' + Math.min.apply('', count));
                 $('.store_much').text(parseFloat(goodsPrice) + toltalMuch);
             } else {
                 $('.store_much').text(parseFloat(goodsPrice));
             }
         });
+        //购买或者加入购物车 0加入购物车 1立即购买
+        $(".choice_type footer a").on('touchend', function () {
+            var postdata ={};
+            var that = this;
+            !function (valueactive) {
+                if ($('.value_button li').length == valueactive.length) {
+                    var ids = '';
+                    valueactive.each(function (index, child) {
+                        ids += $(child).attr('data-id') + ',';
+                    });
+                    postdata.ids = ids.substring(0, ids.length - 1);
+                    postdata.goodsId = goodsId;
+                    check($(that).index(),postdata);
+                } else {
+                    alert('还有属性未选择！')
+                }
+            }($('.value_button .valueactive'))
+        });
+        function check(value,data) {
+            if (value == 0) {
+                //    加入购物车
+                cloudMail.postValue(data);
+            } else if (value == 1) {
+                //立即购买
+                window.location = 'http://www.cqyytx.com?';
+            }
+        }
     },
     //显示即时消息
     showListInfo: function (type, userName, userimg, text) {
-        var content ='';
+        var content = '';
         var maxDisplayMsgCount = 20;
         var childrenLiList = $(".content_box .content_list li");
         if (childrenLiList.length == maxDisplayMsgCount) {
             $(".content_box .content_list").children().first().remove();
         }
 //            type 0、用户进来 1、游客进来 2、用户发送消息 3、用户送出礼品 4、点赞
-        switch (type){
+        switch (type) {
             case 0:
-                content = '<li><div class="content"><figure style="background-image: url('+userimg+')">'
-                    +'<i class="iconLv icon_lv6"></i></figure><dl class="content_info">'
-                    +'<dd style="white-space: normal;line-height: 1.4rem"><span class="user_type" style="background-color: #00c4b9;">用户</span><span'
-                    +'style="padding: 0 .3rem">'+userName+'</span>进入直播房间</dd></dl></div></li>';
+                content = '<li><div class="content"><figure style="background-image: url(' + userimg + ')">'
+                    + '<i class="iconLv icon_lv6"></i></figure><dl class="content_info">'
+                    + '<dd style="white-space: normal;line-height: 1.4rem"><span class="user_type" style="background-color: #00c4b9;">用户</span><span'
+                    + 'style="padding: 0 .3rem">' + userName + '</span>进入直播房间</dd></dl></div></li>';
                 break;
             case 1:
                 content = '<li><div class="welcome_info"><span class="user_type" style="background-color: #ffd855;">游客</span>'
-                +'<span style="padding: 0 .3rem">'+userName+'</span>进入直播房间</div></li>';
+                    + '<span style="padding: 0 .3rem">' + userName + '</span>进入直播房间</div></li>';
                 break;
             case 2:
-                content = '<li><div class="content"><figure style="background-image: url('+userimg+')"></figure>'
-                +'<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>'+userName+'</dd>'
-                +'<dt>'+text+'</dt></dl></div></li>';
+                content = '<li><div class="content"><figure style="background-image: url(' + userimg + ')"></figure>'
+                    + '<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>' + userName + '</dd>'
+                    + '<dt>' + text + '</dt></dl></div></li>';
                 break;
             case 3:
-                content = '<li><div class="content"><figure style="background-image: url('+userimg+')"></figure>'
-                    +'<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>'+userName+'</dd>'
-                    +'<dt>'+text+'</dt></dl></div></li>';
+                content = '<li><div class="content"><figure style="background-image: url(' + userimg + ')"></figure>'
+                    + '<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>' + userName + '</dd>'
+                    + '<dt>' + text + '</dt></dl></div></li>';
                 break;
             case 4:
-                content = '<li><div class="content"><figure style="background-image: url('+userimg+')"></figure>'
-                    +'<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>'+userName+'</dd>'
-                    +'<dt>给主播赞了一个！</dt></dl></div></li>';
+                content = '<li><div class="content"><figure style="background-image: url(' + userimg + ')"></figure>'
+                    + '<dl class="content_info"><dd><span class="user_type" style="background-color: #f9743a;">用户</span>' + userName + '</dd>'
+                    + '<dt>给主播赞了一个！</dt></dl></div></li>';
                 break;
         }
         //写入消息
         $(".content_box").find('.content_list').append(content);
 
-    //    当有人发信息时滚动到最底部
-        if($(".content_box").find('.content_list').children().length>5){
+        //    当有人发信息时滚动到最底部
+        if ($(".content_box").find('.content_list').children().length > 5) {
             $('.content_box').scrollTop($('.content_box>div').height());
         }
     },
@@ -405,6 +443,21 @@ var cloudMail = {
 
         });
     },
+    //设置cookies
+    setCookie: function (name, value) {
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+    },
+   //读取cookie
+    getCookie: function (name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+        if (arr = document.cookie.match(reg))
+            return unescape(arr[2]);
+        else
+            return null;
+    },
 //      ajax请求所有商品的列表
     //  获取边看边买列表
     getAllList: function (pData) {
@@ -413,26 +466,40 @@ var cloudMail = {
                 // 生成新条目的HTML
                 var html = '';
                 var listData = result.data;
-                if(result.data.length!=0){
-                    $('#allList').find('.list-container').children().first().css('display','none');
+                if (result.data.length != 0) {
+                    $('#allList').find('.list-container').children().first().css('display', 'none');
 
                     for (var i = 0; i < listData.length; i++) {
                         html += '<li class="push_store"><div class="gutter"><figure><img src="img/bb8b43bdd565e5a06cf7a84d837fdb6f.jpg" alt="pic" data-echo="img/push_image.jpg" width="100%">'
                             + '</figure><section><div class="discrip">' + listData[i].goodsName + '</div><div class="store_info"><div class="pull-left">'
                             + '<small>商品数量：' + listData[i].goodsStock + '</small><div class="much">￥21.00</div></div><div class="pull-right">'
-                            + '<div class="icon-shopcar"></div></div></div></section></div></li>';
+                            + '<div class="icon-shopcar" data-json=' + JSON.stringify(listData[i]) + '></div></div></div></section></div></li>';
                     }
                     cloudMail.pager('#allList', html, result.count, function () {
                         cloudMail.getAllList({pageIndex: arguments[0]});
                     }, 1);
-                }else {
-                    $('#allList').find('.list-container').children().first().css('display','block');
+                } else {
+                    $('#allList').find('.list-container').children().first().show();
                 }
             }
         })
     },
+    //发送商品属性
+    postValue:function (pData) {
+        window.liveim.initAjax(url.pushValueUrl, 'post', pData, function (result) {
+            if (result.code == 0 && result) {
+                delete goodsId;
+                delete goodsPrice;
+                var count = cloudMail.getCookie('cartcount');
+                cloudMail.setCookie('cartcount',count+1);
+                alert('添加到购物车成功');
+            } else {
+                alert(result.msg);
+            }
+        })
+    },
     //  获取主播推荐的商品列表
-    getAnchorPush:function (pData) {
+    getAnchorPush: function (pData) {
         window.liveim.initAjax(url.getAnchorPushUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
                 // 生成新条目的HTML
@@ -440,16 +507,16 @@ var cloudMail = {
                 var listData = result.data;
                 for (var i = 0; i < listData.length; i++) {
                     html += '<li class="push_store"><p class="text-center time_tip"><span class="time_m">主播推送</span></p>'
-                        +'<div class="gutter"><figure><img src="'+listData[i].goodsImg+'" alt="pic" data-echo="'+listData[i].goodsImg+'" width="100%">'
-                        +'</figure><section><div class="discrip">'+listData[i].goodsName+'</div><div class="discrip_info">'
-                        +'<div class="pull-left"><div class="much">￥<span style="font-size: 1.4rem">'+listData[i].goodsPrice+'</span></div>'
-                        +'</div><div class="pull-right too_look"><a href="javascript:void (0);">查看</a></div></div></section></div></li>';
+                        + '<div class="gutter"><figure><img src="' + listData[i].goodsImg + '" alt="pic" data-echo="' + listData[i].goodsImg + '" width="100%">'
+                        + '</figure><section><div class="discrip">' + listData[i].goodsName + '</div><div class="discrip_info">'
+                        + '<div class="pull-left"><div class="much">￥<span style="font-size: 1.4rem">' + listData[i].goodsPrice + '</span></div>'
+                        + '</div><div class="pull-right too_look"><a href="javascript:void (0);">查看</a></div></div></section></div></li>';
                 }
                 $('#recommendList').find('.list-container').html(html);
             }
         })
     },
-    getValue:function (pData) {
+    getValue: function (pData) {
         window.liveim.initAjax(url.getGoodsTypeUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
                 var typelist = '';
