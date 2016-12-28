@@ -354,7 +354,7 @@ var cloudMail = {
     //    举报按钮
         $('.icon_report').parents('a').on('touchend',function () {
             $('.report_mask').show().css('opacity',.6);
-            $('.report').show().css('opacity',1);
+            $('.report').show().css('opacity',1).addClass('scale');
         });
         $('.report li div').on('touchend',function () {
             cloudMail.report({text:$(this).text()});
@@ -362,7 +362,10 @@ var cloudMail = {
     //    点击空白关闭
         $('.report_mask,.report .cancel').on('touchend',function () {
             $('.report_mask').css('opacity',0).hide();
-            $('.report').hide();
+            $('.report').removeClass('scale');
+            setTimeout(function () {
+                $('.report').hide();
+            },600)
         });
     },
     //显示即时消息
@@ -504,7 +507,10 @@ var cloudMail = {
             if (result.code == 0 && result) {
                 alert(result.msg);
                 $('.report_mask').css('opacity',0).hide();
-                $('.report').hide();
+                $('.report').removeClass('scale');
+                setTimeout(function () {
+                    $('.report').hide();
+                },600)
             } else {
                 alert(result.msg);
             }

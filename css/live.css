@@ -603,6 +603,10 @@
 }
 /*举报窗口*/
 .report{
+    -moz-transform:scale(.01,.01);
+    -webkit-transform:scale(.01,.01);
+    -o-transform:scale(.01,.01);
+    transform:scale(.01,.01);
     position: fixed;
     z-index: 12;
     background-color: #fff;
@@ -614,6 +618,12 @@
     border-radius: .4rem;
     -webkit-transition: all .4s linear;
     transition: all .4s linear;
+}
+.scale{
+    -moz-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    -o-transform:scale(1,1);
+    transform:scale(1,1);
 }
 .report h4{
     text-align: center;
