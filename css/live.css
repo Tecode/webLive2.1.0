@@ -589,6 +589,60 @@
     height: 20px;
     background-size: 20px;
 }
+/*举报遮罩*/
+.report_mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+    background-color: #000;
+    opacity: .4;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+/*举报窗口*/
+.report{
+    position: fixed;
+    z-index: 12;
+    background-color: #fff;
+    width: 14rem;
+    height: auto;
+    top: 35%;
+    left: 50%;
+    margin-left: -7rem;
+    border-radius: .4rem;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+.report h4{
+    text-align: center;
+    padding: .2rem 0;
+    color: #222426;
+}
+.report .cancel{
+    border-top: 1px solid #f0f0f0;
+    padding-top: .2rem;
+    color: #CC0000;
+}
+.report li{
+    margin: .3rem 0;
+    overflow: hidden;
+}
+.report li div{
+    box-sizing: border-box;
+    width: 6rem;
+    float: left;
+    text-align: center;
+    border: 1px solid #f1f1f1;
+    font-size: .8rem;
+    padding: .15rem 0;
+    margin:0 .5rem;
+    border-radius: .2rem;
+}
+.report li div:hover{
+    background-color: #fafafa;
+}
 /*弹出动画*/
 @-webkit-keyframes showInUp {
     from, 60%, 75%, 100%, to {

@@ -136,3 +136,25 @@ body {
 .text-right{
     text-align: right;
 }
+/*底部导航按钮*/
+.back_botton{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fafafa;
+    z-index: 100;
+}
+.back_botton a{
+    padding-top: .4rem;
+    color: #ff5757;
+}
+.back_botton ul li{
+    line-height: 1rem;
+    float: left;
+    width: 33.333%;
+    text-align: center;
+}
+.back_botton small{
+    display: block;
+}

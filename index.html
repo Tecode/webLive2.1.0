@@ -371,11 +371,11 @@
                         <i class="icon_shopcart"></i>
                         <small>购物车</small>
                     </a>
-                    <a href="javascript:viod(0);" class="icon_box">
+                    <a href="javascript:;" class="icon_box">
                         <i class="icon_report"></i>
                         <small>举报</small>
                     </a>
-                    <a href="javascript:viod(0);" class="icon_box">
+                    <a href="javascript:;" class="icon_box">
                         <i class="icon_share"></i>
                         <small>分享</small>
                     </a>
@@ -441,25 +441,31 @@
         <!--</li>-->
     </ul>
     <footer>
-        <a href="javascript:void(0);" class="pull-left text-center" style="background-color: #ffba00">加入购物车</a>
-        <a href="javascript:void(0);" class="pull-left text-center" style="background-color: #ff4242">立即购买</a>
+        <a href="javascript:;" class="pull-left text-center" style="background-color: #ffba00">加入购物车</a>
+        <a href="javascript:;" class="pull-left text-center" style="background-color: #ff4242">立即购买</a>
     </footer>
 </section>
 <!--举报框-->
-<section>
+<div class="report_mask" style="display: none;opacity: 0;"></div>
+<section class="report" style="display: none;opacity: 0">
     <h4>选择举报原因</h4>
-    <div>
-        <span>色情、暴力</span>
-        <span>敏感信息</span>
-    </div>
-    <div>
-        <span>民族、宗教歧视</span>
-        <span>赌博</span>
-    </div>
-    <div>
-        <span>谣言</span>
-        <span>人身攻击</span>
-    </div>
+    <ul>
+        <li>
+            <div>色情、暴力</div>
+            <div>敏感信息</div>
+        </li>
+        <li>
+            <div>民族、宗教歧视</div>
+            <div>赌博</div>
+        </li>
+        <li>
+            <div>谣言</div>
+            <div>人身攻击</div>
+        </li>
+        <li class="cancel text-center">
+            取消
+        </li>
+    </ul>
 </section>
 </body>
 <script src="js/imsdk/webim.js"></script>

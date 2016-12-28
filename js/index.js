@@ -5,7 +5,8 @@ var url = {
     getAllListUrl: 'json/allList.json',//获取边看边买列表
     getAnchorPushUrl: 'json/getAnchorPush.json',//
     getGoodsTypeUrl: 'json/type.json',//获取商品类型
-    pushValueUrl:'json/getAnchorPush.json'//添加到购物车保存商品属性
+    pushValueUrl:'json/getAnchorPush.json',//添加到购物车保存商品属性
+    reportUrl:''//举报地址
 };
 var icon = ['swimmingUpRight', 'swimmingUpLeft'];
 var cloudMail = {
@@ -350,6 +351,19 @@ var cloudMail = {
                 window.location = 'http://www.cqyytx.com?';
             }
         }
+    //    举报按钮
+        $('.icon_report').parents('a').on('touchend',function () {
+            $('.report_mask').show().css('opacity',.6);
+            $('.report').show().css('opacity',1);
+        });
+        $('.report li div').on('touchend',function () {
+            cloudMail.report({text:$(this).text()});
+        });
+    //    点击空白关闭
+        $('.report_mask,.report .cancel').on('touchend',function () {
+            $('.report_mask').css('opacity',0).hide();
+            $('.report').hide();
+        });
     },
     //显示即时消息
     showListInfo: function (type, userName, userimg, text) {
@@ -481,6 +495,18 @@ var cloudMail = {
                 } else {
                     $('#allList').find('.list-container').children().first().show();
                 }
+            }
+        })
+    },
+    //举报信息
+    report:function (pData) {
+        window.liveim.initAjax(url.reportUrl, 'post', pData, function (result) {
+            if (result.code == 0 && result) {
+                alert(result.msg);
+                $('.report_mask').css('opacity',0).hide();
+                $('.report').hide();
+            } else {
+                alert(result.msg);
             }
         })
     },

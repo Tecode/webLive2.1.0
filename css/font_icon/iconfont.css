@@ -1,0 +1,41 @@
+
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1482907885614'); /* IE9*/
+  src: url('iconfont.eot?t=1482907885614#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('iconfont.woff?t=1482907885614') format('woff'), /* chrome, firefox */
+  url('iconfont.ttf?t=1482907885614') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('iconfont.svg?t=1482907885614#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:1.4rem;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cart:before { content: "\e6af"; }
+
+.icon-home:before { content: "\e6b8"; }
+
+.icon-cartfill:before { content: "\e6b9"; }
+
+.icon-homefill:before { content: "\e6bb"; }
+
+.icon-goods:before { content: "\e6cd"; }
+
+.icon-present:before { content: "\e6d3"; }
+
+.icon-recordfill:before { content: "\e7a4"; }
+
+.icon-record:before { content: "\e7a6"; }
+
+.icon-home_light:before { content: "\e7d4"; }
+
+.icon-home_fill_light:before { content: "\e7d8"; }
+
+.icon-news_hot_fill_light:before { content: "\e7e6"; }
+
+.icon-news_hot_light:before { content: "\e7e7"; }
+
