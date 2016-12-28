@@ -150,11 +150,12 @@ body {
     color: #ff5757;
 }
 .back_botton ul li{
-    line-height: 1rem;
+    line-height: .8rem;
     float: left;
     width: 33.333%;
     text-align: center;
 }
 .back_botton small{
     display: block;
+    font-size: .65rem;
 }

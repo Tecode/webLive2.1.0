@@ -8,6 +8,23 @@ var url = {
     pushValueUrl:'json/getAnchorPush.json',//添加到购物车保存商品属性
     reportUrl:''//举报地址
 };
+//显示一个消息，会在2秒钟后自动消失
+$.toast = function(msg) {
+    var $toast = $('<div class="modal toast">' + msg + '</div>').appendTo(document.body);
+    $toast.css('marginLeft',-($toast.width()/2));
+        $toast.show().addClass('modal-in');
+            interval(function () {
+                $toast.addClass('modal-out');
+                    interval(function () {
+                        $('.modal').first().remove();
+                    })
+            });
+            function interval(fn) {
+                setTimeout(function () {
+                    fn.call(this,'');
+                },1500);
+    }
+};
 var icon = ['swimmingUpRight', 'swimmingUpLeft'];
 var cloudMail = {
     tips: function (time) {
@@ -338,7 +355,7 @@ var cloudMail = {
                     postdata.goodsId = goodsId;
                     check($(that).index(),postdata);
                 } else {
-                    alert('还有属性未选择！')
+                    $.toast("还有属性未选择!");
                 }
             }($('.value_button .valueactive'))
         });
@@ -505,14 +522,14 @@ var cloudMail = {
     report:function (pData) {
         window.liveim.initAjax(url.reportUrl, 'post', pData, function (result) {
             if (result.code == 0 && result) {
-                alert(result.msg);
+                $.toast(result.msg);
                 $('.report_mask').css('opacity',0).hide();
                 $('.report').removeClass('scale');
                 setTimeout(function () {
                     $('.report').hide();
                 },600)
             } else {
-                alert(result.msg);
+                $.toast(result.msg);
             }
         })
     },
@@ -524,9 +541,9 @@ var cloudMail = {
                 delete goodsPrice;
                 var count = cloudMail.getCookie('cartcount');
                 cloudMail.setCookie('cartcount',count+1);
-                alert('添加到购物车成功');
+                $.toast("添加到购物车成功");
             } else {
-                alert(result.msg);
+                $.toast(result.msg);
             }
         })
     },

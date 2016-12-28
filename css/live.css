@@ -471,8 +471,8 @@
 }
 .choice_type .value_button .value span{
     background-color: #f8f8f8;
-    padding: .2rem .4rem;
-    border-radius: .2rem;
+    padding: .4rem .6rem;
+    border-radius: .4rem;
     margin-right: .3rem;
     font-size: .80rem;
 }
@@ -937,4 +937,48 @@
 .icon7{
     background: url("../img/love_icon.png")-90px -26px no-repeat;
     background-size: 120px;
+}
+/*弹出提示框样式*/
+.modal {
+    width: 13.5rem;
+    position: absolute;
+    z-index: 11000;
+    left: 50%;
+    margin-left: -6.75rem;
+    margin-top: 0;
+    top: 50%;
+    text-align: center;
+    border-radius: 0.35rem;
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0) scale(1.185);
+    transform: translate3d(0, 0, 0) scale(1.185);
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+    color: #3d4145;
+    /*display: none;*/
+}
+.modal.modal-in {
+    opacity: 1;
+    -webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(0, 0, 0) scale(1);
+    transform: translate3d(0, 0, 0) scale(1);
+}
+.modal.modal-out {
+    opacity: 0;
+    z-index: 10999;
+    -webkit-transition-duration: 400ms;
+    transition-duration: 400ms;
+    -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+    transform: translate3d(0, 0, 0) scale(0.815);
+}
+.toast {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 1rem;
+    color: white;
+    padding: 0 .8rem;
+    height: 2rem;
+    line-height: 2rem;
+    font-size: 0.8rem;
+    width: auto;
 }
