@@ -135,6 +135,7 @@
     var cloudMail = {
         //显示订单详情
         payPageAjax:function (pData) {
+        window.liveim.loading();
         window.liveim.initAjax(url.payPageListUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
                 // 生成新条目的HTML
@@ -169,6 +170,11 @@
                     $('.value .tittle .pull-right').eq(2).text('0.00')
 
                 }
+
+                window.liveim.unloading();
+            }else {
+
+                window.liveim.unloading();
             }
         });
         //编辑地址
@@ -258,12 +264,15 @@
         },
         //保存收货地址
         postadress:function (pData) {
+        window.liveim.loading();
         window.liveim.initAjax(url.postadressUrl, 'post', pData, function (result) {
             if (result.code == 0 && result) {
                 $.toast('保存成功');
                 $.router.back();//返回上一页
+                window.liveim.unloading();
             } else {
                 $.toast(result.msg);
+                window.liveim.unloading();
             }
         })
     }

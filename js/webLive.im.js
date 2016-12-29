@@ -294,6 +294,19 @@
             console.log(resp);
         })
     };
+    //加载提示符
+    liveim.loading = function () {
+        var $load = $('<div class="loading_box"><div class="loading"><div class="img"></div></div></div>').appendTo(document.body);
+        setTimeout(function () {
+            $load.css('opacity',1);
+        },100)
+    };
+    liveim.unloading = function () {
+        $('.loading_box').css('opacity',0);
+        setTimeout(function () {
+            $('.loading_box').remove();
+        },100)
+    };
     //ajax方法
     liveim.initAjax = function (url, type, postdata, fn) {
         $.ajax({

@@ -176,6 +176,7 @@
         };
     var cloudMail = {
         getOrderList:function (pData) {
+        window.liveim.loading();
         window.liveim.initAjax(url.orderListUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
                 var html = '';
@@ -234,8 +235,10 @@
                         })(child) + '<a href="#listDetails" class="detail" data-json=' + JSON.stringify(child) + '>详情</a></h3></li>';
                 });
                 $('#oderList').find('.list-container').html(html);
+                window.liveim.unloading();
             } else {
                 $.toast(result.msg);
+                window.liveim.unloading();
             }
         })
     },
