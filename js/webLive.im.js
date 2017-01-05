@@ -83,6 +83,9 @@
                 case '1007':
                     //聊天信息
                     break;
+                case '1008':
+                    options.giftsData(data.content);
+                    break;
             }
         }
     }

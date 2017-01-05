@@ -1,0 +1,54 @@
+{
+  "code": 0,
+  "data": [
+    {
+      "giftimg":"",
+      "giftname":"img/redlips.png",
+      "uimg":"",
+      "giftindex":"69"
+    },
+    {
+      "giftimg":"",
+      "giftname":"img/rose.png",
+      "uimg":"",
+      "giftindex":"36"
+    },
+    {
+      "giftimg":"img/luckycat.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"25"
+    },
+    {
+      "giftimg":"img/mammon.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"74"
+    },
+    {
+      "giftimg":"img/car.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"36"
+    },
+    {
+      "giftimg":"img/beer.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"78"
+    },
+    {
+      "giftimg":"img/hamburg.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"55"
+    },
+    {
+      "giftimg":"img/redlips.png",
+      "giftname":"",
+      "uimg":"",
+      "giftindex":"87"
+    }
+  ],
+  "integral":85
+}

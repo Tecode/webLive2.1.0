@@ -6,7 +6,9 @@ var url = {
     getAnchorPushUrl: 'json/getAnchorPush.json',//
     getGoodsTypeUrl: 'json/type.json',//获取商品类型
     pushValueUrl: 'json/getAnchorPush.json',//添加到购物车保存商品属性
-    reportUrl: ''//举报地址
+    reportUrl: '',//举报地址
+    getGiftUrl: 'json/gifts.json',
+    postGiftsUrl: 'json/gifts.json'
 };
 //显示一个消息，会在2秒钟后自动消失
 $.toast = function (msg) {
@@ -173,6 +175,14 @@ var cloudMail = {
                     $dom.children().last().css('left', '0');
                     cloudMail.showPushList(arguments[0].goodsImg, arguments[0].goodsName, null, arguments[0].goodsLink);
                 }($('.push_box .push_storebox'));
+            },
+        //    送主播礼品
+            giftsData: function (giftData) {
+                $('.push_box .push_storebox').append('<li class="gif_item" style="border-radius: 999px;width: 180px;z-index: 20"><div class="img_push">'
+                    +'<img style="display: inline-block" src='+giftData.giftimg+' width="80px"><span class="gift_count">x1</span></div><figure class="pull-left" style="border-radius: 999px;">'
+                    +'<img src='+giftData.uimg+' width="100%"></figure><div class="discrip pull-left" style="width: 60%">'
+                    +'<h4 style="color: #ffd324">'+giftData.giftname+'</h4><small style="color: #ff5757">送出了'+giftData.giftname+'</small>'
+                    +'</div><div style="clear: both"></div></li>');
             }
 
         };
@@ -260,6 +270,8 @@ var cloudMail = {
         });
 //            点击更多图标 icon_plus
         $('.right .icon_plus').on('touchend', function () {
+            //请求数据加载礼物图片
+            cloudMail.getGifts();
             if ($('.more_fn').hasClass('swipOut')) {
                 $('.more_fn').removeClass('swipOut');
             } else {
@@ -389,6 +401,23 @@ var cloudMail = {
                 $('.report').hide();
             }, 600)
         });
+    //    选择赠送的礼品
+        $('.gifts').on('click','.gif',function () {
+            if($(this).hasClass('choice_gift')){
+                $(this).removeClass('choice_gift');
+            }else {
+                $(this).addClass('choice_gift').siblings().removeClass('choice_gift');
+            }
+        });
+    //    赠送商品
+        $('.gif_tips').on('touchend',function () {
+            if($('.gifts').find('.choice_gift').length==0){
+                $.toast('请选择送给主播的礼物!');
+            }else{
+
+                cloudMail.postGifts({giftindex : $('.gifts .choice_gift').attr('data-giftindex')})
+            }
+        })
     },
     //显示即时消息
     showListInfo: function (type, userName, userimg, text) {
@@ -603,6 +632,37 @@ var cloudMail = {
                 $('.choice_type').find('.value_button').html(typelist);
             } else {
 
+            }
+        })
+    },
+    //  获取礼物图片
+    getGifts: function (pData) {
+        window.liveim.loading();
+        window.liveim.initAjax(url.getGiftUrl, 'get', pData, function (result) {
+            if (result.code == 0 && result) {
+                window.liveim.unloading();
+                // 生成新条目的HTML
+                var html = '';
+                var listData = result.data;
+                $.each(listData,function (index,child) {
+                    html += '<div class="gif" data-giftindex='+child.giftindex+'><div class="image_box" style="width: 55px">'
+                         +'<img src='+child.giftimg+' width="100%" /><small>12快币</small></div></div>';
+                });
+                $('.gifts').html(html);
+                //用户积分
+                $('.my_icon').text(result.integral);
+            }else {
+                window.liveim.unloading();
+                $.toast(result.msg);
+            }
+        })
+    },
+    postGifts:function (pData) {
+        window.liveim.initAjax(url.postGiftsUrl, 'post', pData, function (result) {
+            if (result.code == 0 && result) {
+                // $('.gif').removeClass('choice_gift')
+            } else {
+                $.toast(result.msg);
             }
         })
     }

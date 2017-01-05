@@ -380,9 +380,9 @@
 .more_fn{
     width: 100%;
     position: absolute;
-    bottom: -160px;
+    bottom: -220px;
     left: 0;
-    height: 160px;
+    height: 220px;
     z-index: 5;
     background-color: #fff;
 }
@@ -583,6 +583,19 @@
     top:-10px;
     right: -10px;
 }
+.push_box .img_push{
+    position: absolute;
+    top: -10px;
+    right: -60px;
+}
+.push_box .img_push span{
+    font-size: 1.2rem;
+    color: #f9743a;
+    font-weight: 700;text-shadow: 0 0 20px #fff;
+    position: relative;
+    top: -15px;
+    right: 0;
+}
 .icon_close{
     background: url("../img/opcity_close.png")0 0 no-repeat;
     width: 20px;
@@ -652,6 +665,60 @@
 }
 .report li div:hover{
     background-color: #fafafa;
+}
+/*礼品*/
+.gifts{
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+
+}
+.gifts img{
+    display: block;
+}
+.gifts .gif{
+    width: 25%;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    border-radius: .2rem;
+}
+.gifts .image_box{
+    position: relative;
+    height: 78px;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+.gifts small{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .7rem;
+}
+.gif_button{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding: 0 .9rem;
+    margin-top: .6rem;
+    color: #222426;
+    font-size: .85rem;
+}
+.gif_button .gif_tips{
+    background-color: #ffd324;
+    padding: .2rem .8rem;
+    border-radius: .2rem;
+}
+.gifts .choice_gift{
+    border: 2px solid #f9743a;
 }
 /*弹出动画*/
 @-webkit-keyframes showInUp {
@@ -752,8 +819,8 @@
     }
 
     100% {
-        -webkit-transform: translate3d(0, -160px, 0);
-        transform: translate3d(0, -160px, 0);
+        -webkit-transform: translate3d(0, -220px, 0);
+        transform: translate3d(0, -220px, 0);
     }
 }
 
@@ -769,8 +836,8 @@
     }
 
     100% {
-        -webkit-transform: translate3d(0, -160px, 0);
-        transform: translate3d(0, -160px, 0);
+        -webkit-transform: translate3d(0, -220px, 0);
+        transform: translate3d(0, -220px, 0);
     }
 }
 
@@ -786,8 +853,8 @@
     }
 
     from {
-        -webkit-transform: translate3d(0, -160px, 0);
-        transform: translate3d(0, -160px, 0);
+        -webkit-transform: translate3d(0, -220px, 0);
+        transform: translate3d(0, -220px, 0);
     }
 
     100% {
@@ -803,8 +870,8 @@
     }
 
     from {
-        -webkit-transform: translate3d(0, -160px, 0);
-        transform: translate3d(0, -160px, 0);
+        -webkit-transform: translate3d(0, -220px, 0);
+        transform: translate3d(0, -220px, 0);
     }
 
     100% {
