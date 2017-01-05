@@ -14,7 +14,7 @@
 <div class="page-group oderlist">
     <!--//订单列表-->
     <div class="page page-current" id="oderList">
-        <div class="content infinite-scroll-bottom" style="height: 100%" data-distance="100">
+        <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
             <div class="list-block" style="margin-top: 0;margin-bottom: 0">
                 <ul class="list-container" style="margin-bottom: 2.8rem">
                     <li style="position: absolute;height: 100%;width: 100%">
@@ -174,11 +174,13 @@
     var url = {
         orderListUrl: 'json/orderlist.json'//获取订单详情
         };
+    var pageIndex = 0;
+    var pageCount = 0;
     var cloudMail = {
         getOrderList:function (pData) {
-        window.liveim.loading();
         window.liveim.initAjax(url.orderListUrl, 'get', pData, function (result) {
             if (result.code == 0 && result) {
+                pageCount = result.data.count;
                 var html = '';
                 $.each(result.data.orderlist, function (index, child) {
                     html += '<li><h3 class="tittle clearfix"><span class="pull-left ordernumber">订单编号：' + child.ordernumber + '</span>' +
@@ -234,11 +236,13 @@
                             }
                         })(child) + '<a href="#listDetails" class="detail" data-json=' + JSON.stringify(child) + '>详情</a></h3></li>';
                 });
-                $('#oderList').find('.list-container').html(html);
-                window.liveim.unloading();
+                if(pageIndex>1){
+                    $('#oderList').find('.list-container').append(html);
+                }else {
+                    $('#oderList').find('.list-container').html(html);
+                }
             } else {
                 $.toast(result.msg);
-                window.liveim.unloading();
             }
         })
     },
@@ -301,11 +305,47 @@
                     cloudMail.returGoods({orderid: data.orderid})
                 });
             });
+        },
+//  下拉加载
+        pager: function () {
+            // 加载flag
+            var loading = false;
+
+            //首次加载
+            cloudMail.getOrderList({pageIndex:0});
+            // 注册'infinite'事件处理函数
+            $(document).on('infinite', '.infinite-scroll-bottom', function () {
+                // 如果正在加载，则退出
+                if (loading) return;
+                // 设置flag
+                loading = true;
+
+                setTimeout(function () {
+                    // 重置加载flag
+                    loading = false;
+                    if (pageIndex >= pageCount) {
+                        // 删除加载提示符
+                        $('.infinite-scroll-preloader').remove();
+                        // 加载完毕，则注销无限加载事件，以防不必要的加载
+                        $.detachInfiniteScroll($('.infinite-scroll'));
+                        return;
+                    } else {
+
+                        cloudMail.getOrderList({pageIndex:pageIndex});
+                        // 添加新条目
+                        pageIndex++;
+                    }
+                    //容器发生改变,如果是js滚动，需要刷新滚动
+                    $.refreshScroller();
+                }, 100)
+
+            });
         }
     };
     $(function () {
-        cloudMail.getOrderList();
         cloudMail.showOrderList();
+        cloudMail.pager();
+        $.init();
     })
 </script>
 </html>
