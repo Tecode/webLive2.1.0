@@ -183,6 +183,13 @@ var cloudMail = {
                     +'<img src='+giftData.uimg+' width="100%"></figure><div class="discrip pull-left" style="width: 60%">'
                     +'<h4 style="color: #ffd324">'+giftData.giftname+'</h4><small style="color: #ff5757">送出了'+giftData.giftname+'</small>'
                     +'</div><div style="clear: both"></div></li>');
+
+                setTimeout(function () {
+                    $('.gif_item').css('left', '-300px');
+                    setTimeout(function () {
+                        $('.gif_item').first().remove();
+                    }, 400)
+                },900)
             }
 
         };
@@ -645,7 +652,7 @@ var cloudMail = {
                 var html = '';
                 var listData = result.data;
                 $.each(listData,function (index,child) {
-                    html += '<div class="gif" data-giftindex='+child.giftindex+'><div class="image_box" style="width: 55px">'
+                    html += '<div class="gif" data-giftindex='+child.giftindex+'><div class="image_box" style="width: 40px">'
                          +'<img src='+child.giftimg+' width="100%" /><small>12快币</small></div></div>';
                 });
                 $('.gifts').html(html);
